@@ -1,0 +1,586 @@
+//style for coffee at home and all coffee products and shopproducts.html
+html{
+    font-size: 16px;
+}
+
+body{
+    img{
+        object-fit:cover;
+        object-position: center;
+        width: 100%;   
+    }
+}
+.coffee_home_grid{
+    max-width: 1200px;
+    margin-inline: auto;
+ 
+}
+.all-top{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 2rem;
+    margin: 3rem 0rem;
+
+    img {
+        aspect-ratio: 1; 
+        height: 100%;
+    }
+}
+
+//preloader for shop products
+.preloaderShop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(222, 222, 222); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinnerShop {
+    border: 0.375rem solid #f3f3f3; /* Light gray */
+    border-top: 0.375rem solid #002a15;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.top_one{
+   
+    h2{
+        font-family: "Open Sans", sans-serif;
+        text-transform: capitalize;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 2rem 1rem;
+    }
+    p{
+        font-family: "Open Sans", sans-serif;
+        line-height: 2;
+        font-size: 1rem;
+        margin: 0rem 1rem;
+    }
+    .freeDelivery{
+        text-align: center;
+        background-color: #05C9FF;
+        color: #0A0A0A;
+        font-weight: 400;
+        padding: 1rem 0rem;
+        margin-top: 1.5rem;
+      }
+}
+
+.top_one_1{
+  margin-top: 7rem;
+    img{
+        height: 100%;
+    }
+ .top-text-home{
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 2.5rem 1rem;
+    color: #141414;
+    background-color:#DBDBDB;
+    font-size: 1.3rem;
+    margin-top: -0.4rem;
+    height: auto;
+}
+
+.top-text-home:hover{
+    background-color: #141414;
+    color:#DBDBDB;
+}
+
+}
+//style for all coffee products  desktop
+#box1{
+    max-width: 1200px;
+    margin-inline: auto;
+}
+.product_banner_buttons{
+    display: grid;
+    gap: 1.5rem;
+
+    img{
+        height: 100%;
+    }
+    h2,
+    h3{
+        display:flex;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-left: 1rem;
+        font-size: 1.2rem;
+        padding: 0.6rem;
+        background-color: #141414;;
+        color: white;
+        width: fit-content;
+    }
+  
+}
+
+
+.products_stage_Btn{
+    display: flex;
+    justify-content: space-between;
+     padding: 1.5rem 1rem;
+     box-shadow: 1px 1px 5px 1px rgb(23, 22, 22);
+
+     &:focus{
+        background-color: #141414;
+        color:#DBDBDB;
+        padding: 0.4rem;
+        outline: none;  
+    }
+    a{
+        cursor: pointer;
+        font-family: "Open Sans", sans-serif;
+        text-transform: uppercase;
+        color:#444343;
+        border: none;
+        border-radius: 0.4rem;
+        padding: 0.4rem;
+        transition: background-color 0.3s, color 0.3s;  /* Smooth transition for hover/focus */
+
+    }
+    a:hover, a:focus {
+        background-color: #141414;
+        color: #DBDBDB;
+        padding: 0.4rem;  /* Keep padding consistent */
+      }
+}
+.grid-for-all-products{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin: 3rem 0rem;
+
+    img{
+        height: 100%;
+    }
+}
+.atProducts{
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 1rem 0rem;
+    line-height: 1.2;
+}
+.products_stage{
+    margin-left: 1rem;
+    p{
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+   .price_lab{
+     font-weight: 600;
+    }
+    img{
+        border: 0.1rem solid #1a2309;
+    }
+   }
+
+
+   
+//style for add-to-basket button
+
+  .product-addBtn{
+    line-height: 2;
+   
+    button{
+        all: unset; /* Resets all inherited styles */
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+        appearance: none; 
+        background: none; 
+        border: none; /* Removes default border */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Reset any margins */
+        font-size: 100%; /* Reset font size */
+        cursor: pointer; 
+        padding: 0.3rem;
+        background-color:#360036;
+        color: #f6f3f3;
+    }
+
+
+    button:hover{
+        background-color:#670367;
+        color: #f6f3f3;
+    }
+  
+   
+}
+
+.mobile_toggle{
+   
+    .toggle-basket{
+        cursor: pointer;
+      .frankie_cart_basket{
+       
+        float: right;
+        margin-right: 2rem;
+
+        button{
+            all: unset; /* Resets all inherited styles */
+            -webkit-appearance: none; 
+            -moz-appearance: none; 
+            appearance: none; 
+            background: none; 
+            border: none; /* Removes default border */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Reset any margins */
+            font-size: 100%; /* Reset font size */
+            cursor: pointer; 
+            padding: 0.3rem;
+            background-color:#f6f3f3;
+            color:rgb(22, 21, 21);
+        }
+    
+      }
+    }
+  
+   }
+
+//modal style for items inside the basket  on shopproduct.html
+.modal_3{
+    z-index: 8888; 
+    display: none; 
+    position: fixed; 
+    top: 0;
+    left:0px;
+    right:0px;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 0.093rem solid #315131;
+
+.modal-content-product{
+    display: grid;
+    gap: 2rem;
+    margin-inline: auto;
+    width: 100%;
+
+}
+
+    .form-text-background{
+        background-color: #fff;
+        font-family: "Open Sans", sans-serif;
+       
+    
+        h2{
+            font-family: "Open Sans", sans-serif;
+            text-align: center;
+            text-transform: uppercase;
+             margin: 2rem 0rem;
+        }
+
+      
+        form{
+            display: grid;
+            justify-content: center; /* Centers the form horizontally */
+            align-items: center; /* Centers the form vertically */
+            min-height: 100vh; 
+            text-transform: uppercase;
+            font-family: "Open Sans", sans-serif;
+            line-height: 2;
+            margin-bottom: 1.2rem;
+          
+            input{ 
+                padding: 1.1rem;
+                width: 18rem;
+                text-align: justify;
+            }
+            button{
+                all: unset; /* Resets all inherited styles */
+                -webkit-appearance: none; 
+                -moz-appearance: none; 
+                appearance: none; 
+                background: none; 
+                border: none; /* Removes default border */
+                padding: 0; /* Remove padding */
+                margin: 0; /* Reset any margins */
+                font-size: 100%; /* Reset font size */
+                cursor: pointer; 
+                padding: 0.4rem;
+                background-color:#979797;
+                color:#000;
+            }
+            button:hover{
+                background-color:#000;
+                color:#979797;
+            }
+        }
+      
+         
+    }
+    background-color: #04000076;
+  
+}
+
+.modal-content-product{
+    max-width: 900px;
+    margin-inline: auto;
+    background-color: hsl(0, 0%, 100%);
+    padding: 1.25rem 0rem;
+    border: 0.083rem solid #315131;
+    position: relative; 
+    overflow: hidden; 
+
+
+  h2{
+    text-align: center;
+  }
+  p{
+    text-align: center;
+
+  }
+
+    .proceed-information{
+        cursor: pointer;
+        margin-top: 2rem;
+        float: right;
+        padding: 2rem;
+        background-color: #acb3a8;
+        color: #000;
+        font-size: 1.1rem;
+        border: 0rem;
+    
+    }
+    .proceed-information:hover{
+        background-color:#000 ;
+        color:#acb3a8;
+    }
+   
+
+}
+
+
+//style for cart-items in the additems.js which shows in the basket
+.cart-item{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    color:#360036;
+
+    button{
+        all: unset; 
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+        appearance: none; 
+        background: none; 
+        border: none; 
+        padding: 0; 
+        margin: 0; 
+        font-size: 100%; 
+        cursor: pointer; 
+        padding: 0.4rem;
+        background-color:#979797;
+        color:#000;
+    }
+    button:hover{
+        background-color:#000;
+        color:#979797;
+    }
+
+    .cart-item-button{
+        align-content: center;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.total-class{
+    display: flex;
+    background-color: #acb3a8;
+    padding: 1.2rem;
+    color: #000;
+    font-weight: bold;
+    justify-self: end;
+}
+.cart-name-image-price{
+     margin: 2rem 0rem;
+    p{
+        font-family: "Open Sans", sans-serif;
+        color:#360036;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+}
+
+//style for all coffee products tablets and desktop
+@media (max-width: 1000px) {
+    .product_banner_buttons{
+        display: grid;
+        gap: 1.5rem;
+    }
+    .products_stage_Btn{
+        display: flex;
+        justify-content: space-between;
+        a{
+            font-family: "Open Sans", sans-serif;
+            text-transform: uppercase;
+        }
+    }
+    .grid-for-all-products{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        margin: 3rem 0rem;
+    }
+    .atProducts{
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        padding: 1rem 0rem;
+        line-height: 1.2;
+    }
+    .products_stage{
+    
+        p{
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+       .price_lab{
+         font-weight: 600;
+        }
+       }
+
+}
+//ends
+//style for all coffee products mobile and tablets
+@media (max-width: 850px) {
+   
+    .products_stage_Btn{
+        display: grid;
+        grid-template-columns: auto;
+        gap: 1.4rem;
+        justify-content: center;
+       
+        a{
+            font-family: "Open Sans", sans-serif;
+            text-transform: uppercase;
+        }
+    }
+    .grid-for-all-products{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+    .atProducts{
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        padding: 1rem 0rem;
+    }
+    .products_stage{
+    
+        p{
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+       .price_lab{
+         font-weight: 600;
+        }
+
+        img{
+            height: 100%;
+            border: 0.1rem solid #1a2309;
+        }
+       }
+
+}
+//ends
+
+//for cart basket icon for mobile device
+@media screen and (max-width: 768px){
+
+    
+    .mobile_toggle{
+      
+        .toggle-basket{
+            display: flex;
+            align-items: center;
+            float: right;
+
+            .frankie_cart_basket{
+                margin-right: 0rem;
+  
+              }
+        }
+      
+       }
+ 
+    }
+    
+@media (max-width: 800px) {
+.all-top{
+    display: grid;
+    grid-template-columns:auto;
+    gap: 3rem;
+    margin: 3rem 0rem;
+
+}
+.top_one{
+    img{
+        height: 60vh;
+        width: 100%;
+    }
+}
+
+}
+@media (max-width: 581px) {
+
+    .grid-for-all-products{
+        display: grid;
+        grid-template-columns: auto;
+        gap: 3rem;
+    }
+    .atProducts{
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        padding: 1rem 0rem;
+    }
+    .products_stage{
+      
+
+        p{
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+       .price_lab{
+         font-weight: 600;
+        }
+            img{
+                height: 100%;
+                border: 0rem solid #1a2309;
+            }
+    
+       }
+  
+}
+
+@media (orientation: landscape) {
+    .top_one{
+        img{
+            height: 80vh;
+        }
+    }
+
+}
+
+

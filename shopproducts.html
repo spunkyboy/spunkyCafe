@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="frankie cafe, drinks, food and coffee products items ">
+    <title>Frank - Shop | Cafe</title>
+    <link rel="icon" type="image/x-icon" href="images/frankie_logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="https://kit.fontawesome.com/5d07f027c2.js" crossorigin="anonymous"></script> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <style>
+         .fa-house{
+    font-size: 15px;
+    cursor: pointer;
+    color:#404040;
+  }
+  span{
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+  .hidden{
+    display: none;
+  }
+    .visible {
+      display: block; /* Only show the section with this class */
+    }
+
+   
+    </style>
+
+     <script>
+      function showSection(sectionId) {
+      // First, hide all sections
+      const allSections = document.querySelectorAll('.hidden');
+      allSections.forEach(section => {
+        section.style.display = 'none';
+      });
+
+      // Now, display the selected section
+      const selectedSection = document.getElementById(sectionId);
+      if (selectedSection) {
+        selectedSection.style.display = 'block';
+      }
+    }
+
+      document.addEventListener("DOMContentLoaded", function() {
+    // When the page loads, if there's a hash in the URL, show the section
+    const sectionId = window.location.hash.substring(1); // Get the part after #
+    if (sectionId) {
+      showSection(sectionId); 
+    }
+  });
+     </script>
+</head>
+<body>
+    
+ <main>
+      <header class="fixed-header">
+        <nav>
+          <div class="mobile_toggle  shopproduct_toggle">
+              <div class="desktop_logo">
+                  <a href="index.html">c-fkie</a>
+              </div>
+               <div class="toggle-basket">
+                  <div>
+                      <a class="click_Icon" aria-label="Toggle navigation">
+                        &#9776;
+                      </a>
+                  </div>
+                  <div class="frankie_cart_basket">
+                    <button id="cart-button" onclick="openCartModal()">
+                      <i class="fa-solid fa-basket-shopping">
+                        <span id="item-count">0</span>
+                      </i>
+                    </button>
+                  </div>
+               </div>
+             </div>
+           <div>
+          <ul class="nav-list">
+            <li>
+               <a href="index.html" class="mobile_logo">c-fkie</a>
+            </li>
+            <li class="right_Btn">
+              <li class="dropdown">
+                  <a href="#" class="dropbtn">menu</a>
+                  <div class="dropdown-content">
+                      <a href="coffee.html">coffee</a>
+                      <a href="food.html">food</a>
+                      <a href="drinks.html">drinks</a>
+                  </div>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropbtn">about</a>
+                <div class="dropdown-content">
+                    <a href="ourcoffee.html">our coffee</a>
+                    <a href="ourstories.html">our stories</a>
+                </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">shop</a>
+              <div class="dropdown-content">
+                  <a href="javascript:void(0);" id="capsules-link">capsules</a>
+                  <a href="javascript:void(0);" id="beans-link">beans & ground</a>
+                  <a href="javascript:void(0);" id="gift-cards-link">gift cards & cups</a>
+                  <a href="javascript:void(0);" id="gift-ideas-link">gift ideas</a>
+                  <a href="javascript:void(0);" id="clearance-link">clearance</a>
+              </div>
+           </li>
+              <li><a href="contactus.html">Contact</a></li>
+
+          </ul>
+        
+        </div>
+       
+      </nav>
+    
+      </header>
+    
+     
+       <div class="coffee_home_grid">
+           <!-- Modal structure loader productsinfo.html for product information and preview-->
+          <div id="myModal_2" class="modal_2">
+            <div class="modal-content_2">
+                <span class="close_2">&times;</span>
+                  <div id="modal-content_2_b"> 
+                    <div id="preloader_3" class="preloader_3">
+                      Loading, please wait...
+                    </div>
+                    <div id="contentChange">
+                    </div>
+                  </div>
+            </div>
+          </div>
+            <!--  modal open for cart basket shop page-->
+            <div id="cart-modal" class="modal_3">
+              <div class="modal-content-product">
+                  <span class="close_2" onclick="closeCartModal()">&times;</span>
+                    <h2>Your Cart</h2>
+                    <div id="cart-items">
+                      <p>Your cart is empty.</p>
+                    </div>
+
+                  <button id="proceed-btn" class="proceed-information" onclick="showUserForm()" style="display: none;">Proceed to Payment</button>
+
+                    <div class="form-text-background">
+                      <div id="user-info-form" style="display: none;" class="form-hidden">
+                        <h2>Enter Your Information</h2>
+                        <form id="userForm" onsubmit="return validateForm()" autocomplete="on">
+                          <label for="name">Name:</label><br>
+                          <input type="text" id="name" name="name" placeholder="Enter your name" required class="filled-input"  autocomplete="name"><br><br>
+                    
+                          <label for="email">Email:</label><br>
+                          <input type="email" id="email" name="email" placeholder="Enter your email" required class="filled-input" autocomplete="email"><br><br>
+                            
+                          <!-- Address Line 1 -->
+                          <input type="text" id="address" name="address" placeholder="Enter your address" 
+                          autocomplete="address-line1" required class="filled-input">
+
+                          <!-- City -->
+                          <input type="text" id="city" name="city" placeholder="City" 
+                          autocomplete="address-level2" required class="filled-input">
+                          <!-- ZIP Code -->
+                          <input type="text" id="postcode" name="postcode" placeholder="ZIP code" 
+                          autocomplete="postal-code" class="filled-input">
+
+                          <!-- Country -->
+                          <input type="text" id="country" name="country" placeholder="Country" 
+                          autocomplete="country" required class="filled-input">
+
+                          <label for="phone">Phone:</label><br>
+                          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required class="filled-input"  autocomplete="tel"><br><br>
+                    
+                          <button type="submit">Submit</button>
+                        </form>
+                      </div>  
+                    </div> 
+            </div>
+            </div>
+         
+        <section class="top_one_1 hidden" id="box1">
+       <!-- Preloader (hidden by default) -->
+        <div class="preloaderShop" style="display: flex;">
+          <div class="spinnerShop"></div>
+        </div>
+         
+          <div class="product_banner_buttons">
+            <figure>
+                <img src="images/frankie_capsule.jpg" alt="coffee beans">
+            </figure>
+            <h2>capsules</h2>
+            <div class="products_stage_Btn">
+              <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
+              <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
+              <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
+              <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
+              <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
+            </div>
+          </div>
+          
+          <div class="grid-for-all-products">
+           
+                <div class="products_stage">
+               <!--onclick to load product items from productsinfo.html information-->
+                  <a href="javascript:void(0);" onclick="pricesLoader('signature house')">
+                    <figure>
+                        <img src="images/frankie_capsule.jpg" alt="coffee capsule">
+                    </figure>
+                  </a>
+                  <h2 class="atProducts"> signature house blend</h2>
+                  <p>classico - beans</p>
+                  <p class="price_lab">from £4.25</p>
+                 
+                  <div>
+                  </div>
+                    <div class="product-addBtn">
+                      <div>
+                        <div class="product">
+                          <h2>Product 1</h2>
+                          <p>Price: £4.25</p>
+                          <button 
+                              onclick="addToCart(1, 'Product 1', '<img src=\'images/frankie_capsule.jpg\'>', 4.25)">
+                              Add to Cart
+                        </button>           
+                      </div>
+                      </div>
+                  </div>
+                </div>
+        
+<!--products 2-->
+            <div class="products_stage">
+             <!--onclick to load product items from productsinfo.html information-->
+              <a href="javascript:void(0);" onclick="pricesLoader('single origin £4.05')">
+                <figure>
+                  <img src="images/frankie_capsule.jpg" alt="coffee capsule">
+                </figure>
+              </a>
+                <h2 class="atProducts"> single origin</h2>
+                <p>brazil - beans</p>
+                <p class="price_lab">from £4.10</p>
+
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 2</h2>
+                      <p>Price: £4.10</p>
+                      <button 
+                          onclick="addToCart(2, 'Product 2', '<img src=\'images/frankie_capsule.jpg\'>', 4.10)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>
+              </div>
+            </div>
+<!--products 3-->
+            <div class="products_stage">
+              <a href="javascript:void(0);" onclick="pricesLoader('winter blend - coffee')">
+                <figure>
+                  <img src="images/frankie_capsule.jpg" alt="coffee capsule">
+                </figure>
+              </a>
+                <h2 class="atProducts"> winter blend - coffee</h2>
+                <p class="price_lab">from £4.30</p>
+
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 3</h2>
+                      <p>Price: £4.30</p>
+                      <button 
+                          onclick="addToCart(3, 'Product 3', '<img src=\'images/frankie_capsule.jpg\'>', 4.30)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>
+              </div>
+            </div>
+            <!--products 4-->
+            <div class="products_stage">
+              <a href="javascript:void(0);" onclick="pricesLoader('coffee capsules - el')">
+                <figure>
+                  <img src="images/frankie_capsule.jpg" alt="coffee capsule">
+                </figure>
+              </a>
+                <h2 class="atProducts"> single origin</h2>
+                <p> coffee capsules - el</p>
+                <p class="price_lab">from £4.20</p>
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 4</h2>
+                      <p>Price: £4.20</p>
+                      <button 
+                          onclick="addToCart(4, 'Product 4', '<img src=\'images/frankie_capsule.jpg\'>', 4.25)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>
+              </div>
+            </div>
+
+          <!--products 5-->
+            <div class="products_stage">
+              <a href="javascript:void(0);" onclick="pricesLoader('capsules - virtuoso')">
+                <figure>
+                  <img src="images/frankie_capsule.jpg" alt="coffee capsule">
+                </figure>
+              </a>
+                <h2 class="atProducts"> special blend</h2>
+                <p>coffee capsules - virtuoso</p>
+                <p class="price_lab">from £4.10</p>
+
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 5</h2>
+                      <p>Price: £4.10</p>
+                      <button 
+                          onclick="addToCart(5, 'Product 5', '<img src=\'images/frankie_capsule.jpg\'>', 4.10)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>
+              </div>
+             </div>
+
+             <!--products 6-->
+             <div class="products_stage">
+              <a href="javascript:void(0);" onclick="pricesLoader('capsules - decaffeinated')">
+                <figure>
+                  <img src="images/frankie_capsule.jpg" alt="coffee capsule">
+                </figure>
+              </a>
+                <h2 class="atProducts"> signature house blend</h2>
+                <p>coffee capsules - decaffeinated</p>
+                <p class="price_lab">from £4.30</p>
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 6</h2>
+                      <p>Price: £4.30</p>
+                      <button 
+                          onclick="addToCart(6, 'Product 6', '<img src=\'images/frankie_capsule.jpg\'>', 4.30)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>
+              </div>
+           </div>
+           <!--products 7-->
+           <div class="products_stage">
+            <a href="javascript:void(0);" onclick="pricesLoader( 'capsules - peru')">
+              <figure>
+                <img src="images/frankie_capsule.jpg" alt="coffee capsule">
+              </figure>
+            </a>
+              <h2 class="atProducts"> special blend</h2>
+              <p>coffee capsules - peru</p>
+              <p class="price_lab">from £3.20</p>
+
+              <div class="product-addBtn">
+                <div>
+                  <div class="product">
+                    <h2>Product 7</h2>
+                    <p>Price: £3.20</p>
+                    <button 
+                        onclick="addToCart(7, 'Product 7', '<img src=\'images/frankie_capsule.jpg\'>', 3.20)">
+                        Add to Cart
+                  </button>           
+                </div>
+                </div>
+            </div>
+         </div>
+          </div>
+         
+        </section>
+   <!--section for all Beans products-->
+        <section class="top_one_1 hidden" id="box2" >
+            <!-- Preloader (hidden by default) -->
+        <div class="preloaderShop" style="display: flex;">
+          <div class="spinnerShop"></div>
+        </div>
+          <div class="product_banner_buttons">
+            <figure>
+              <img src="images/frankie_beans.jpg" alt="coffee capsules">
+            </figure>
+            <h2>beans & ground</h2>
+            <div class="products_stage_Btn">
+              <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
+              <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
+              <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
+              <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
+              <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
+            </div>
+          </div>
+
+          <div class="grid-for-all-products">
+            <div class="products_stage">
+              <a href="javascript:void(0);" onclick="pricesLoader('classico beans house')">
+                <figure>
+                  <img src="images/frankie_beans.jpg" alt="coffee beans">
+                </figure>
+              </a>
+              <h2 class="atProducts"> signature house blend</h2>
+              <p>classico - beans</p>
+              <p class="price_lab">from £4.25</p>
+
+              <div class="product-addBtn">
+                <div>
+                  <div class="product">
+                    <h2>Product 8</h2>
+                    <p>Price: £4.25</p>
+                    <button 
+                        onclick="addToCart(8, 'Product 8', '<img src=\'images/frankie_beans.jpg\'>', 4.25)">
+                        Add to Cart
+                  </button>           
+                </div>
+                </div>
+                
+            </div>
+            </div>
+
+            <div class="products_stage">
+              <a href="javascript:void(0);" onclick="pricesLoader('classico ground coffee')">
+                <figure>
+                  <img src="images/frankie_beans.jpg" alt="coffee beans">
+                </figure>
+              </a>
+              <h2 class="atProducts"> single origin</h2>
+              <p>brazil - beans</p>
+              <p class="price_lab">from £2.45</p>
+              <div class="product-addBtn">
+                <div>
+                  <div class="product">
+                    <h2>Product 9</h2>
+                    <p>Price: £2.45</p>
+                    <button 
+                        onclick="addToCart(9, 'Product 9', '<img src=\'images/frankie_beans.jpg\'>', 2.45)">
+                        Add to Cart
+                  </button>           
+                </div>
+                </div>
+                
+            </div>
+            </div>
+
+            <div class="products_stage">
+              <a href="javascript:void(0);" onclick="pricesLoader('siena-wholeB2')">
+                <figure>
+                  <img src="images/frankie_beans.jpg" alt="coffee beans">
+                </figure>
+              </a>
+              <h2 class="atProducts"> colombia - whole beans</h2>
+              <p class="price_lab">from £4.25</p>
+              <div class="product-addBtn">
+                <div>
+                  <div class="product">
+                    <h2>Product 10</h2>
+                    <p>Price: £4.25</p>
+                    <button 
+                        onclick="addToCart(10, 'Product 10', '<img src=\'images/frankie_beans.jpg\'>', 4.25)">
+                        Add to Cart
+                  </button>           
+                </div>
+                </div>  
+            </div>
+            </div>
+
+            <div class="products_stage"> 
+              <a href="javascript:void(0);" onclick="pricesLoader('special-2-blend')">
+                <figure>
+                  <img src="images/frankie_beans.jpg" alt="coffee beans">
+                </figure>
+              </a>
+              <h2 class="atProducts"> special-2-blend</h2>
+              <p class="price_lab">from £4.15</p>
+              <div class="product-addBtn">
+                <div>
+                  <div class="product">
+                    <h2>Product 11</h2>
+                    <p>Price: £4.15</p>
+                    <button 
+                        onclick="addToCart(11, 'Product 11', '<img src=\'images/frankie_beans.jpg\'>', 4.15)">
+                        Add to Cart
+                  </button>           
+                </div>
+                </div>  
+            </div>
+            </div>
+          
+         
+          </div>
+         
+         
+        </section>
+    <!--section for all gift card and cups products-->
+        <section class="top_one_1 hidden" id="box3">
+          <!-- Preloader (hidden by default) -->
+        <div class="preloaderShop" style="display: flex;">
+          <div class="spinnerShop"></div>
+        </div>
+          <div class="product_banner_buttons">
+            <figure>
+              <img src="images/frankie_gift_cups.jpg" alt="coffee gift">
+            </figure>
+            <h3>gift cards and cups</h3>
+            <div class="products_stage_Btn">
+               <a href="javascript:void(0);" class="button_1" onclick="showSection('box1')">capsules</a>
+               <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
+               <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
+               <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
+               <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
+           </div>
+           </div>
+
+           <div class="grid-for-all-products">
+            <div class="products_stage">
+              <a href="javascript:void(0);" onclick="pricesLoader('rcup')">
+                <figure>
+                  <img src="images/frankie_gift_cups.jpg" alt="coffee gift">
+                </figure>
+              </a>
+              <h2 class="atProducts"> signature house blend</h2>
+              <p>r cup</p>
+              <p class="price_lab">from £4.65</p>
+              <div class="product-addBtn">
+                <div>
+                  <div class="product">
+                    <h2>Product 12</h2>
+                    <p>Price: £4.65</p>
+                    <button 
+                        onclick="addToCart(12, 'Product 12', '<img src=\'images/frankie_gift_cups.jpg\'>', 4.65)">
+                        Add to Cart
+                  </button>           
+                </div>
+                </div>  
+            </div>
+            </div>
+            <div class="products_stage">
+              <a href="javascript:void(0);" onclick="pricesLoader('keepcup')">
+                <figure>
+                  <img src="images/frankie_gift_cups.jpg" alt="coffee gift">
+                </figure>
+              </a>
+              <h2 class="atProducts"> single origin</h2>
+              <p>keep cup</p>
+              <p class="price_lab">from £2.40</p>
+              <div class="product-addBtn">
+                <div>
+                  <div class="product">
+                    <h2>Product 13</h2>
+                    <p>Price: £2.40</p>
+                    <button 
+                        onclick="addToCart(13, 'Product 13', '<img src=\'images/frankie_gift_cups.jpg\'>', 2.40)">
+                        Add to Cart
+                  </button>           
+                </div>
+                </div>  
+            </div>
+            </div>
+            <div class="products_stage">
+            <a href="javascript:void(0);" onclick="pricesLoader('classic gift card')">
+              <figure>
+                <img src="images/frankie_gift_cups.jpg" alt="coffee gift">
+              </figure>
+            </a>
+              <h2 class="atProducts"> classic gift card</h2>
+              <p class="price_lab">from £4.25</p>
+              <div class="product-addBtn">
+                <div>
+                  <div class="product">
+                    <h2>Product 14</h2>
+                    <p>Price: £4.25</p>
+                    <button 
+                        onclick="addToCart(14, 'Product 14', '<img src=\'images/frankie_gift_cups.jpg\'>', 4.25)">
+                        Add to Cart
+                  </button>           
+                </div>
+                </div>  
+            </div>
+            </div>
+            <div class="products_stage"> 
+              <a href="javascript:void(0);" onclick="pricesLoader('festive gift card')">
+                <figure>
+                  <img src="images/frankie_gift_cups.jpg" alt="coffee gift">
+                </figure>
+              </a>
+              <h2 class="atProducts">festive gift card</h2>
+              <p class="price_lab">from £4.25</p>
+              <div class="product-addBtn">
+                <div>
+                  <div class="product">
+                    <h2>Product 15</h2>
+                    <p>Price: £4.25</p>
+                    <button 
+                        onclick="addToCart(15, 'Product 15', '<img src=\'images/frankie_gift_cups.jpg\'>', 4.25)">
+                        Add to Cart
+                  </button>           
+                </div>
+                </div>  
+            </div>
+            </div>
+            <div class="products_stage">
+              <a href="javascript:void(0);" onclick="pricesLoader('festive cup gift card')">
+                <figure>
+                  <img src="images/frankie_gift_cups.jpg" alt="coffee gift">
+                </figure>
+              </a>
+              <h2 class="atProducts"> special blend</h2>
+              <p>festive cup gift card</p>
+              <p class="price_lab">from £3.25</p>
+              <div class="product-addBtn">
+                <div>
+                  <div class="product">
+                    <h2>Product 16</h2>
+                    <p>Price: £3.25</p>
+                    <button 
+                        onclick="addToCart(16, 'Product 16', '<img src=\'images/frankie_gift_cups.jpg\'>', 3.25)">
+                        Add to Cart
+                  </button>           
+                </div>
+                </div>  
+            </div>
+            </div>
+          </div>
+        </section>
+   <!--section for all gift ideas-->
+        <section class="top_one_1 hidden" id="box4">
+           <!-- Preloader (hidden by default) -->
+        <div class="preloaderShop" style="display: flex;">
+          <div class="spinnerShop"></div>
+        </div>
+          <div class="product_banner_buttons">
+            <figure>
+              <img src="images/frankie_gifts_ideas.jpg" alt="gift ideas">
+            </figure>
+            <h3> gift ideas</h3>
+            <div class="products_stage_Btn">
+                <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
+                <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
+                <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
+                <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
+                <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
+            </div>
+            </div>
+
+            <div class="grid-for-all-products">
+              <div class="products_stage">
+                <a href="javascript:void(0);" onclick="pricesLoader('coffee advent calendar')">
+                  <figure>
+                    <img src="images/frankie_gifts_ideas.jpg" alt="gift ideas">
+                  </figure>
+                </a>
+                <h2 class="atProducts"> signature house blend</h2>
+                <p>coffee advent calendar</p>
+                <p class="price_lab">from £3.25</p>
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 17</h2>
+                      <p>Price: £3.25</p>
+                      <button 
+                          onclick="addToCart(17, 'Product 17', '<img src=\'images/frankie_gifts_ideas.jpg\'>', 3.25)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>  
+              </div>
+              </div>
+              <div class="products_stage">
+                <a href="javascript:void(0);" onclick="pricesLoader('classico filter set')">
+                  <figure>
+                    <img src="images/frankie_gifts_ideas.jpg" alt="gift ideas">
+                  </figure>
+                </a>
+                <h2 class="atProducts"> single origin</h2>
+                <p>classico filter set</p>
+                <p class="price_lab">from £4.45</p>
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 18</h2>
+                      <p>Price: £4.45</p>
+                      <button 
+                          onclick="addToCart(18, 'Product 18', '<img src=\'images/frankie_gifts_ideas.jpg\'>', 4.45)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>  
+              </div>
+              </div>
+              <div class="products_stage">
+                <a href="javascript:void(0);" onclick="pricesLoader('decaffeinated filter set')">
+                  <figure>
+                    <img src="images/frankie_gifts_ideas.jpg" alt="gift ideas">
+                  </figure>
+                </a>
+                <h2 class="atProducts"> decaffeinated filter set</h2>
+                <p class="price_lab">from £3.25</p>
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 19</h2>
+                      <p>Price: £3.25</p>
+                      <button 
+                          onclick="addToCart(19, 'Product 19', '<img src=\'images/frankie_gifts_ideas.jpg\'>', 3.25)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>  
+              </div>
+              </div>
+              <div class="products_stage"> 
+                <a href="javascript:void(0);" onclick="pricesLoader('syrup caramel')">
+                  <figure>
+                    <img src="images/frankie_gifts_ideas.jpg" alt="gift ideas">
+                  </figure>
+                </a>
+                <h2 class="atProducts"> syrup caramel</h2>
+                <p class="price_lab">from £1.25</p>
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 20</h2>
+                      <p>Price: £1.25</p>
+                      <button 
+                          onclick="addToCart(20, 'Product 20', '<img src=\'images/frankie_gifts_ideas.jpg\'>', 1.25)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>  
+              </div>
+              </div>
+              <div class="products_stage">
+                <a href="javascript:void(0);" onclick="pricesLoader('capsules + syrup set')">
+                  <figure>
+                    <img src="images/frankie_gifts_ideas.jpg" alt="gift ideas">
+                  </figure>
+                </a>
+                <h2 class="atProducts"> special blend</h2>
+                <p>capsules + syrup set</p>
+                <p class="price_lab">from £2.25</p>
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 21</h2>
+                      <p>Price: £2.25</p>
+                      <button 
+                          onclick="addToCart(21, 'Product 21', '<img src=\'images/frankie_gifts_ideas.jpg\'>', 2.25)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>  
+              </div>
+              </div>
+              <div class="products_stage">
+                <a href="javascript:void(0);" onclick="pricesLoader('discovery 60 pack')">
+                  <figure>
+                    <img src="images/frankie_gifts_ideas.jpg" alt="gift ideas">
+                  </figure>
+                 </a>
+                  <h2 class="atProducts"> special blend</h2>
+                <p>discovery (60 pack)</p>
+                <p class="price_lab">from £3.25</p>
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 22</h2>
+                      <p>Price: £3.25</p>
+                      <button 
+                          onclick="addToCart(22, 'Product 22', '<img src=\'images/frankie_gifts_ideas.jpg\'>', 3.25)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>  
+              </div>
+               </div>
+           
+            </div>
+           
+        </section>
+         <!--list for all clearance products-->
+        <section class="top_one_1 last-top hidden" id="box5" >
+           <!-- Preloader (hidden by default) -->
+        <div class="preloaderShop" style="display: flex;">
+          <div class="spinnerShop"></div>
+        </div>
+          <div class="product_banner_buttons">
+              <figure>
+                <img src="images/frankie_clearance.jpg" alt="clearance items of products">
+              </figure>
+            <h3> clearance</h3>
+            <div class="products_stage_Btn">
+                <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
+                <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
+                <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
+                <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
+                <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
+              </div>
+            </div>    
+            <div class="grid-for-all-products">
+              <div class="products_stage">
+                <a href="javascript:void(0);" onclick="pricesLoader('capsules - salvador')">
+                  <figure>
+                    <img src="images/frankie_clearance.jpg" alt="clearance items of products">
+                  </figure>
+                </a>
+                <h2 class="atProducts"> signature house blend</h2>
+                <p>capsules - salvador</p>
+                <p class="price_lab">from £4.25</p>
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 23</h2>
+                      <p>Price: £4.25</p>
+                      <button 
+                          onclick="addToCart(23, 'Product 23', '<img src=\'images/frankie_clearance.jpg\'>', 4.25)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>  
+              </div>
+              </div>
+
+              <div class="products_stage">
+                <a href="javascript:void(0);" onclick="pricesLoader('coffee - napoletano')">
+                  <figure>
+                    <img src="images/frankie_clearance.jpg" alt="clearance items of products">
+                  </figure>
+                </a>
+                <h2 class="atProducts"> colombia coffee - napoletano</h2>
+                <p class="price_lab">from £1.25</p>
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 24</h2>
+                      <p>Price: £1.25</p>
+                      <button 
+                          onclick="addToCart(24, 'Product 24', '<img src=\'images/frankie_clearance.jpg\'>', 1.25)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>  
+              </div>
+              </div>
+        
+              <div class="products_stage">
+                <a href="javascript:void(0);" onclick="pricesLoader('coffee capsules - guatemala')">
+                  <figure>
+                    <img src="images/frankie_clearance.jpg" alt="clearance items of products">
+                  </figure>
+                </a>
+                  <h2 class="atProducts"> special blend</h2>
+                <p>coffee capsules - guatemala</p>
+                <p class="price_lab">from £4.05</p>
+                <div class="product-addBtn">
+                  <div>
+                    <div class="product">
+                      <h2>Product 25</h2>
+                      <p>Price: £4.05</p>
+                      <button 
+                          onclick="addToCart(25, 'Product 25', '<img src=\'images/frankie_clearance.jpg\'>', 4.05)">
+                          Add to Cart
+                    </button>           
+                  </div>
+                  </div>  
+              </div>
+               </div>
+               <div class="products_stage">
+                <a href="javascript:void(0);" onclick="pricesLoader('ground capsules - brazil')">
+                  <figure>
+                    <img src="images/frankie_clearance.jpg" alt="clearance items of products">
+                  </figure>
+                </a>
+                <h2 class="atProducts"> special blend</h2>
+              <p>ground capsules - brazil</p>
+              <p class="price_lab">from £3.05</p>
+              <div class="product-addBtn">
+                <div>
+                  <div class="product">
+                    <h2>Product 26</h2>
+                    <p>Price: £3.05</p>
+                    <button 
+                        onclick="addToCart(26, 'Product 26', '<img src=\'images/frankie_clearance.jpg\'>', 3.05)">
+                        Add to Cart
+                  </button>           
+                </div>
+                </div>  
+            </div>
+             </div>
+    
+            </div>
+           
+        </section>
+
+      </div>
+        <footer class="top-footer-element">
+            <ul>
+             <li><a href="index.html">cafe</a></li>
+             <li><a href="index.html">frankie</a></li>
+            </ul>
+             <ul>
+               <li>about</li>
+               <li>press releases</li>
+               <li>story</li>
+               <li>ethics</li>
+             </ul>
+             <ul>
+               <li>information</li>
+               <li>gender pay report</li>
+               <li>terms & conditions</li>
+               <li>privacy</li>
+               <li>tax policy</li>
+             </ul>
+             <ul>
+               <li>help</li>
+               <li>FAQ</li>
+               <li><a href="contactus.html">contact us</a></li>
+               <li>gift cards</li>
+               <li><a href="clickapp.html">the app</a></li>
+             </ul>
+         
+         </footer>
+        
+        
+    </main>
+    <script src="header.js" defer></script>
+    <script src="productsinfoloader.js" defer></script>
+    <script src="shopproducts.js" defer></script>
+    <script src="additems.js" defer></script>
+    <script src="shopdropsamepage.js"></script>
+   
+</body>
+</html>

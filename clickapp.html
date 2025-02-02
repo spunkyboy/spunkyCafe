@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" frankie cafe, drinks, food and coffee products items">
+    <title>The App - Frankie Cafe</title>
+    <link rel="icon" type="image/x-icon" href="images/frankie_logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5d07f027c2.js" crossorigin="anonymous"></script> 
+    <style>
+     .the-main-gap{
+      max-width: 1200px;
+      margin-inline: auto;
+     }
+      figure img{
+        height: 100%;
+      }
+     
+      .first-sec{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .first-text{
+        align-content: center;
+        line-height: 2;
+         padding-right: 10px;
+      } 
+     
+      h2{
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+        text-transform: uppercase;
+      }
+      h3{
+        font-weight: 550;
+        font-size: 20px;
+        text-transform: capitalize;
+        font-family: "Open Sans", sans-serif;
+
+      }
+      .apps-logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+        
+      }
+      .apps-logo img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .click-center{
+        margin: 16px 0px;
+      }
+      .second-figure, img{
+        width: 100%;
+        height: 100%;
+      }
+  
+      .second-sec{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 40px;
+      }
+      .second-text{
+        font-family: "Open Sans", sans-serif;
+        align-content: center;
+        padding: 10px;
+        line-height: 2;
+      }
+      .the-main-gap{
+        display: grid;
+        gap: 70px;
+      }
+     
+      @media only screen and (max-width: 770px){
+        .first-sec{
+          display: block;
+        }
+        .apps-logo{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .apps-logo .apple_store{
+        width: 100%;
+      }
+      .first-text{
+        margin: 20px 15px;
+      }
+      .second-sec{
+        display: block;
+      }
+      }
+      .fa-house{
+    font-size: 15px;
+    cursor: pointer;
+    color: #404040;
+  }
+  span{
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+    </style>
+  </head>
+
+  <body> 
+    <header class="fixed-header">
+      <nav>
+    
+        <div class="mobile_toggle">
+           <div class="desktop_logo">
+              <a href="index.html">c-fkie</a>
+           </div>
+           <div>
+              <a class="click_Icon" aria-label="Toggle navigation">&#9776;</a>
+           </div>
+        </div>
+        <div>
+        <ul class="nav-list">
+          <li>
+             <a href="index.html" class="mobile_logo">c-fkie</a>
+          </li>
+          <li class="right_Btn">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">menu</a>
+                <div class="dropdown-content">
+                    <a href="coffee.html">coffee</a>
+                    <a href="food.html">food</a>
+                    <a href="drinks.html">drinks</a>
+                </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">about</a>
+              <div class="dropdown-content">
+                  <a href="ourcoffee.html">our coffee</a>
+                  <a href="ourstories.html">our stories</a>
+              </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">shop</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" id="capsules-link">capsules</a>
+                <a href="javascript:void(0);" id="beans-link">beans & ground</a>
+                <a href="javascript:void(0);" id="gift-cards-link">gift cards & cups</a>
+                <a href="javascript:void(0);" id="gift-ideas-link">gift ideas</a>
+                <a href="javascript:void(0);" id="clearance-link">clearance</a>
+            </div>
+         </li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+   </header>
+
+     <!-- Preloader -->
+  <div class="full-page-loader" id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+<div class="wrapper-container"> 
+<main class="the-main-gap">
+  
+ <section>
+  <h2 class="h1__heading">the app</h2>
+</section>
+<section class="first-sec">
+    <figure>
+        <img src="images/coffe-app.webp" alt="frankie coffee app">
+    </figure>
+    <div class="first-text">
+        <h2>Earn Rewards</h2>
+        <h3>exclusive treats</h3>
+        <p>
+            The Caffè Frankie app is the fastest way to get your morning coffee and means you’ll never lose your loyalty card again.
+            Link your debit or credit card for secure and speedy payment, enjoy watching your stamps build on your digital loyalty card, plus earn exclusive rewards along the way. 
+        </p>
+        <div class="apps-logo">
+          <div>
+            <a href="javascript:void(0);" onclick="alert('in progress..'); return false;" >
+              <figure>
+                <img src="images/btn_apple.png" alt="apple_store">
+              </figure>
+            </a>
+          </div>
+          <div>
+            <a href="javascript:void(0);" onclick="alert('in progress..'); return false;" >
+              <figure>
+                <img src="images/btn_googlePla.png" alt="google_store">
+              </figure>
+            </a>
+          </div>
+        </div>
+    </div>
+</section>
+<section class="second-sec">
+  <div class="second-text">
+  <h2>Avoid The Queue</h2>
+  <h3>click and collect</h3>
+   <p>
+    The ultimate time saver, order ahead, beat the queues and earn rewards along the way. Make sure you have the latest version of the App (this bit’s important) so you can see Click & Collect on the home screen. If not, you’ll need to update it in the App Store.
+   </p>
+   <p class="click-center">
+   Select the store and then the items you wish to purchase. If you haven’t already, you’ll need to link a payment card to complete your order. It’ll make all future payments seamless.
+  </p>
+   <p>
+    We’ll send you updates and notify you when your order’s ready to collect. There’s a designated, easy-to-spot area where your coffee (or other items) will be waiting for you.
+  </p>
+</div>
+<div class="animation-im">
+  <figure class="second-figure">
+    <img src="images/stay_home.jpg" alt="frankie coffee app" class="second-im" >
+  </figure>
+</div>
+</section>
+</main>
+</div>
+
+<footer class="top-footer-element">
+  <ul>
+   <li><a href="index.html">cafe</a></li>
+   <li><a href="index.html">frankie</a></li>
+  </ul>
+   <ul>
+     <li>about</li>
+     <li>press releases</li>
+     <li>story</li>
+     <li>ethics</li>
+   </ul>
+   <ul>
+     <li>information</li>
+     <li>gender pay report</li>
+     <li>terms & conditions</li>
+     <li>privacy</li>
+     <li>tax policy</li>
+   </ul>
+   <ul>
+    <li>help</li>
+    <li>FAQ</li>
+    <li><a href="contactus.html">contact us</a></li>
+    <li>gift cards</li>
+    <li><a href="clickApp.html">the app</a></li>
+   </ul>
+
+ </footer>
+  <script src="header.js" defer></script>
+  <script src="preloader.js" defer></script>
+  <script src="shopdropBtn.js"></script>
+  </body>
+</html>

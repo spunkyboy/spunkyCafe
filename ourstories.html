@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" ">
+    <title>Frankie Cafe| About Product</title>
+    <link rel="icon" type="image/x-icon" href="images/frankie_logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/5d07f027c2.js" crossorigin="anonymous"></script> 
+
+    <style>
+   .products_talk{
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    color: #002517
+   }
+   .taste_good{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px 0px;
+    color: #002517
+   }
+   .fa-house{
+    font-size: 15px;
+    cursor: pointer;
+    color: #404040;
+  }
+  span{
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+  </style>
+  </head>
+
+  <body>
+
+    <header class="fixed-header">
+      <nav>
+    
+        <div class="mobile_toggle">
+           <div class="desktop_logo">
+              <a href="index.html">c-fkie</a>
+           </div>
+           <div>
+              <a class="click_Icon" aria-label="Toggle navigation">&#9776;</a>
+           </div>
+        </div>
+        <div>
+        <ul class="nav-list">
+          <li>
+             <a href="index.html" class="mobile_logo">c-fkie</a>
+          </li>
+          <li class="right_Btn">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">menu</a>
+                <div class="dropdown-content">
+                    <a href="coffee.html">coffee</a>
+                    <a href="food.html">food</a>
+                    <a href="drinks.html">drinks</a>
+                </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">about</a>
+              <div class="dropdown-content">
+                  <a href="ourcoffee.html">our coffee</a>
+                  <a href="ourstories.html">our stories</a>
+              </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">shop</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" id="capsules-link">capsules</a>
+                <a href="javascript:void(0);" id="beans-link">beans & ground</a>
+                <a href="javascript:void(0);" id="gift-cards-link">gift cards & cups</a>
+                <a href="javascript:void(0);" id="gift-ideas-link">gift ideas</a>
+                <a href="javascript:void(0);" id="clearance-link">clearance</a>
+            </div>
+         </li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+   </header>
+  
+ <!-- Preloader -->
+ <div class="full-page-loader" id="preloader">
+  <div class="spinner"></div>
+</div>
+
+<div class="wrapper-container">  
+  <main >
+    <section class="cups-image">
+        <figure>
+          <img src="images/ourstories-1200.webp" 
+                srcset="images/ourstories-800.webp 800w, images/ourstories-1200.webp 1200w" 
+                sizes="(max-width: 800px) 100vw, 1200px" 
+                alt="Our Stories" class="image2">
+
+         </figure>
+         <h2 class="products_talk">Products Talks</h2>
+    </section>
+    <section class="three-cup-books">
+          <div class="cup-books-text">
+              <h2 class="taste_good">
+                tastes so good
+              </h2>
+              <p>
+                Produced in the heart of Minas Gerais. Carmo de Paranaiba one of the most renowned coffee regions of Brazil. 
+              </p>
+              <p>
+                Every bean produced at fazenda Santa Cecilia is carefully harvested & picked for their sweetness making them the perfect choice for espresso
+              </p>
+              <p>
+                The Veloso family has been successfully growing coffee for several generations with advanced processing techniques & sustainable agricultural practices.
+              </p> 
+          </div>
+          <div class="books-image">
+            <figure>
+             <img src="images/taste_good_image.jpg"  alt="taste-good-image">
+            </figure>
+          </div>
+    </section>
+   
+   <!--cdn for the swiper slide-->
+
+     <!-- Swiper JS -->
+     <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <figure>
+            <img src="images/coffee_half_slide.webp"  alt="first-coffee-beans" class="left-seed-image">
+          </figure>
+            <div class="swiper-text">
+              <p><span class="classico">Classico</span> Award-winning classico original blend. Our signature house blend. This is the coffee we serve you in-store.</p>
+            <ul class="slide-text-left">
+              <li>A blend of beans from different origins.</li>
+              <li>Rich, bold and complex.</li>
+              <li>Medium dark roast, with notes of dark chocolate and caramel, for a sweet balanced flavour.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <figure>
+           <img src="images/coffee_half_slide2.webp" alt="second-coffee-beans"  class="right-seed-image">
+          </figure>
+          <div class="swiper-text-right">
+            <p><span class="classico-right">Carmo de paranaiba</span>Limited edition single origin coffee exclusively from our farmers in Brazil. Available in-store. </p>
+          <ul class="slide-text-right">
+            <li>100% Arabica beans from a single region.</li>
+            <li>Rich hazlenut and chocolate flavour.</li>
+            <li>Medium roast to bring out the caramel and chocolate notes.</li>
+          </ul>
+        </div>
+        </div>
+        
+      </div>
+      <!-- <div class="swiper-scrollbar"></div> -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <script>
+      const swiper = new Swiper('.swiper', {
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      
+        // And if we need scrollbar
+       scrollbar: {
+         el: '.swiper-scrollbar',
+       },
+      });
+    </script>
+
+    <section class="coffee-seed">
+      <div class="coffee-seed-image">
+        <figure>
+          <img src="images/coffee_seed_cup.jpg" alt="coffee seed" class="coffee-beans-image">
+        </figure>
+      </div>
+        <div class="coffee-seed-text">
+          <h2 class="taste_good">what Is</h2>
+          <p>Single origin</p>
+          <p>"Single Origin" is coffee produced from an individual producer, crop or region from one country, of exceptional quality.</p>
+          <p>Each season we will bring you the most interesting and distinguished single origin coffee to enjoy.</p>
+        </div>
+    </section>
+
+   <section class="coffee-pot">
+    <div class="coffee-pot-text">
+      <h3 class="taste_good">the same</h3>
+      <p>but different</p>
+      <p>Carmo de Paranaiba coffee's versatility means it offers a distinctive flavour no matter how you prefer to drink it.</p>
+      <p>Whether you're a latte lover, cappuccino, americano or espresso drinker – you’ll find this coffee deeply satisfying and a pleasure to taste. </p>
+      <p>Ask for Brazil and try your usual, but different.</p>
+    </div>
+     <div class="coffee-pot-image">
+       <figure>
+        <img src="images/coffee_seed_luv.jpg" alt="same but different" class="samebut-image">
+       </figure>
+     </div>
+   </section>
+
+   <footer class="top-footer-element">
+    <ul>
+      <li><a href="index.html">cafe</a></li>
+      <li><a href="index.html">frankie</a></li>
+    </ul>
+     <ul>
+       <li>about</li>
+       <li>press releases</li>
+       <li>story</li>
+       <li>ethics</li>
+     </ul>
+     <ul>
+       <li>information</li>
+       <li>gender pay report</li>
+       <li>terms & conditions</li>
+       <li>privacy</li>
+       <li>tax policy</li>
+     </ul>
+     <ul>
+       <li>help</li>
+       <li>FAQ</li>
+       <li><a href="contactus.html">contact us</a></li>
+       <li>gift cards</li>
+       <li><a href="clickApp.html">the app</a></li>
+     </ul>
+ 
+  </footer>
+  </main>
+  
+  </div>
+  <script src="header.js" defer></script>
+  <script src="preloader.js" defer></script>
+  <script src="shopdropBtn.js"></script>
+  </body>
+</html>

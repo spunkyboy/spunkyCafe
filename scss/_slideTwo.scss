@@ -1,0 +1,172 @@
+@use "_slideOne";
+@use "_allColors";
+@import "./allImages";
+@import "./allFontText";
+
+html {
+  font-size: 16px;
+
+}
+body{
+  p,
+  h2,
+  h3,
+  .text4 {
+    font-family: "Open Sans", sans-serif;
+  }
+}
+
+@mixin coffee-food-drink{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 442px;
+}
+ //slide content change to images grid
+.menu-treat-text{
+  display: none;
+}
+.three-cup-image{
+  display: block;
+ 
+}
+.flex-menu{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  .coffee-food-drink{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    :hover img{
+      opacity: 0.3;
+    }
+    img{
+      aspect-ratio: 1;
+      cursor: pointer;
+    }
+  
+  }
+
+  .flex-menu-text{
+    align-self: center;
+    line-height: 2;
+    padding-left: 1rem;
+    font-weight: 300;
+    color:  #002517;
+  }
+  h2{
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  }
+  a{
+    margin-left: 1rem;
+   }
+ .food-button{
+  @include coffee-food-drink;
+ }
+ .coffee-button{
+  @include coffee-food-drink;
+ }
+ .drink-button{
+  @include coffee-food-drink;
+ }
+ .menu-text-food{
+  display: grid;
+  z-index: 4;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #002517;
+  padding: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+ }
+  a {
+  overflow: hidden;
+  object-fit: cover;
+  object-position:center;
+  padding-top: 0rem;
+  border-bottom: none;
+  }
+
+a:hover{
+  border-bottom: none;
+}
+
+}
+
+.menu-mobile{
+  display: none;
+}
+
+@media(max-width: 700px){
+.flex-menu{
+  display: none;
+}
+
+.menu-mobile{
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1rem;
+  line-height: 2;
+
+  h2{
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+  }
+  p{
+    font-family: "Open Sans", sans-serif;
+  }
+  h3{
+    text-transform: uppercase;
+  } 
+
+  .swiper {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 0rem;
+}
+  .swiper-slide{
+  text-align: center;
+  align-content: center;
+
+    img{
+      aspect-ratio: 1;
+    }
+  }
+.menu-text-mobile{
+  padding: 1rem;
+}
+
+.swiper-pagination-bullet {
+  background-color:#ffffff; /* Red color for bullets */
+  width: 1rem;
+  height: 1rem;
+}
+.swiper-button-prev,
+.swiper-button-next{
+  color: white;
+}
+}
+
+
+}
+
+@media (orientation: landscape) {
+
+  .menu-mobile{
+  .swiper {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.swiper-wrapper{
+  height: 100%;
+}
+
+  }
+}
+

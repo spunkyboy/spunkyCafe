@@ -1,0 +1,161 @@
+@use"_allColors";
+@import "./allImages";
+
+body{
+p{
+  font-family: "Open Sans", sans-serif;
+}
+}
+.four-images-tablet-desktop{
+  display: none;
+  
+}
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* or any specific width */
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 6;
+  }
+  
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slider .images {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  .images{
+    img {
+      width: 100%; 
+      height: auto; 
+      max-height: 25rem; 
+      object-fit: cover; 
+      aspect-ratio: 1;
+    }
+  }
+}
+
+@media (min-width: 700px){
+  .four-images-tablet-desktop{
+    display: block;
+    grid-row: 2;
+   
+  }
+  .three-cup-image{
+    grid-row: 3;
+  }
+  .slider-container{
+        display: none;
+      }
+         
+      .images-for-tablets{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1.3rem;
+    
+        .text-over-image{
+          display: block;
+          text-transform: uppercase;
+          font-size: 1rem;
+          text-align: center;
+          font-weight: 350;
+          // border-radius: 1rem;
+        }
+      }
+      .tablet__item{
+        position: relative;
+        :hover img{
+          opacity: 0.3;
+        }
+        img{
+          @include images-shared;
+          height: 385px;
+        }
+        p{
+          position: absolute;
+          top:83.3%;
+          color: #002517;
+          padding: 1.1rem;
+          background-color: #f3dcbf;
+        }
+        
+        a,
+        a:hover{
+          border-bottom: 0rem;
+         }
+         
+      }  
+
+}
+
+
+@media (min-width: 900px){
+
+  .slider-container{
+    display: none;
+  }
+     
+      
+      .images-for-tablets{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 1.2rem;
+        .text-over-image{
+          display: block;
+          text-transform: uppercase;
+          font-size: 1rem;
+          text-align: center;
+        }
+      }
+      .tablet__item{
+        position: relative;
+
+        :hover img{
+          opacity: 0.3;
+        }
+        img{
+          @include images-shared;
+          height: 15.625rem;
+        }
+        p{
+          position: absolute;
+          top:81.6%;
+          background-color: #f3dcbf;
+          padding: 0.5rem;
+          color: #002517;;
+
+        }
+        a{
+          border-bottom: 0rem;
+        }
+        a:hover{
+          border-bottom: 0rem;
+        }
+      }
+      
+    
+
+}

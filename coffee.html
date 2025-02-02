@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" frankie cafe, drinks, food and coffee products items">
+    <title>Frank Cafe | Coffee Product</title>
+    <link rel="icon" type="image/x-icon" href="images/frankie_logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="https://kit.fontawesome.com/5d07f027c2.js" crossorigin="anonymous"></script> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+      h3{
+        padding-left: 1rem;
+      }
+      .fa-house{
+    font-size: 15px;
+    cursor: pointer;
+    color: #404040;
+  }
+  span{
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+     </style>
+  
+  </head>
+<body>
+
+
+<main>
+  <header class="fixed-header">
+    <nav>
+  
+      <div class="mobile_toggle">
+         <div class="desktop_logo">
+            <a href="index.html">c-fkie</a>
+         </div>
+         <div>
+            <a class="click_Icon" aria-label="Toggle navigation">&#9776;</a>
+         </div>
+      </div>
+      <div>
+      <ul class="nav-list">
+        <li>
+           <a href="index.html" class="mobile_logo">c-fkie</a>
+        </li>
+        <li class="right_Btn">
+          <li class="dropdown">
+              <a href="#" class="dropbtn">menu</a>
+              <div class="dropdown-content">
+                  <a href="coffee.html">coffee</a>
+                  <a href="food.html">food</a>
+                  <a href="drinks.html">drinks</a>
+              </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">about</a>
+            <div class="dropdown-content">
+                <a href="ourcoffee.html">our coffee</a>
+                <a href="ourstories.html">our stories</a>
+            </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">shop</a>
+          <div class="dropdown-content">
+              <a href="javascript:void(0);" id="capsules-link">capsules</a>
+              <a href="javascript:void(0);" id="beans-link">beans & ground</a>
+              <a href="javascript:void(0);" id="gift-cards-link">gift cards & cups</a>
+              <a href="javascript:void(0);" id="gift-ideas-link">gift ideas</a>
+              <a href="javascript:void(0);" id="clearance-link">clearance</a>
+          </div>
+       </li>
+       <li><a href="contactus.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+ </header>
+   <!-- Preloader full page -->
+   <div class="full-page-loader" id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+<div class="menus_wrapper" >
+    <!-- Modal structure for all products with information loading from modal pages-->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <div id="modal-content"> 
+             <!-- Preloader for modal from menu.js for modal pages -->
+              <div id="preloader2" class="preloader2">
+                <div class="spinner2"></div>
+              </div>
+            <div id="content"></div>
+          </div>
+      </div>
+  </div>
+
+    <section class="all_info_container">
+      <h2 class="update-Information">information</h2>
+        <section class="top_info">
+            <div class="menuHeader">
+                <h2>menu</h2>
+                <p>coffee</p>
+            </div>
+         <!--sub header buttons for coffee food and drink pages-->
+            <div class="menu_align">
+                <h2><a href="coffee.html" class="click_state1">Coffee</a></h2>
+                <h2><a href="drinks.html" >drinks</a></h2>
+                <h2><a href="food.html" >food</a></h2>
+            </div>
+        </section>
+       <section class="middle_info">
+       <!--product_1 with loader button from modal pages-->
+            <div class="menu_product_1">
+              <h3>Coffee</h3>
+              <a href="javascript:void(0);" onclick="loadContent('NEW Amaretto')">
+                <img src="images/coffee1.jpg" alt="iced_coffee_image">
+                <p>NEW Amaretto Iced Velvet Americano</p>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                <p><i class="fa-solid">more info</i></p>
+              </a>
+            </div>
+
+            <div class="nutritionAlergen_2">
+              <a href="images/food%20allergy.pdf" target="_blank">nutrition & allergen guide</a>
+              <a href="images/food%20allergy.pdf" target="_blank">nutrition & allergen guide (northern ireland)</a>
+           </div>
+
+            <!--product_2  with loader button from modal pages-->
+            <div class="menu_product_2">
+              <a href="javascript:void(0);"  onclick="loadContent('Vanilla Iced ')">
+                <p>Vanilla Iced Velvet Americano</p>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                <p><i class="fa-solid">more info</i></p>
+              </a>
+            </div>
+
+               <!--product_3  with loader button from modal pages-->
+               <div class="menu_product_3">
+                <a href="javascript:void(0);"  onclick="loadContent('Mocha Frappe')">
+                  <p>Mocha Frappe</p>
+                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                  <p><i class="fa-solid">more info</i></p>
+                </a>
+              </div>
+
+                 <!--product_4  with loader button from modal pages-->
+                 <div class="menu_product_4">
+                  <a href="javascript:void(0);"  onclick="loadContent('Flat White')">
+                    <p>Iced Flat White</p>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                    <p><i class="fa-solid">more info</i></p>
+                  </a>
+                </div>
+
+                 <!--product_5  with loader button from modal pages-->
+              <div class="menu_product_5">
+                <a href="javascript:void(0);"  onclick="loadContent('Pistachio-w Iced')">
+                  <img src="images/coffee3.jpg" alt="iced_coffee">
+                  <p>Pistachio-w Iced Latte (NI)</p>
+                  <p><i class="fa-solid">more info</i></p>
+                </a>
+              </div>
+          
+                <!--product_6  with loader button from modal pages-->
+                <div class="menu_product_6">
+                  <a href="javascript:void(0);"  onclick="loadContent('Frappe Latte')">
+                    <p>Frappe Latte</p>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                    <p><i class="fa-solid">more info</i></p>
+                  </a>
+                </div>
+
+            <!--product_7  with loader button from modal pages-->
+            <div class="menu_product_7">
+              <a href="javascript:void(0);"  onclick="loadContent('Iced Latte')">
+                <p>Pistachio Iced Latte</p>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                <p><i class="fa-solid">more info</i></p>
+              </a>
+            </div>
+
+       <!--product_8  with loader button from modal pages-->
+       <div class="menu_product_8">
+        <a href="javascript:void(0);"  onclick="loadContent('Cortado')">
+          <p>Cortado</p>
+          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+          <p><i class="fa-solid">more info</i></p>
+        </a>
+      </div>
+
+       <!--product_9  with loader button from modal pages-->
+       <div class="menu_product_9">
+        <a href="javascript:void(0);"  onclick="loadContent('Con Panna')">
+          <p>Espresso Con Panna</p>
+          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+          <p><i class="fa-solid">more info</i></p>
+        </a>
+      </div>
+
+        <!--product_10  with loader button from modal pages-->
+        <div class="menu_product_10">
+          <a href="javascript:void(0);"  onclick="loadContent('Cherry Iced')">
+            <p>Cherry Iced Latte</p>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+            <p><i class="fa-solid">more info</i></p>
+          </a>
+        </div>
+           
+        </section>
+
+        <!--extras contents -->
+        <section class="extra_info">
+          <h4 class="extra_horizon">
+            <span>MILKSHAKE</span>
+          </h4>
+          <div class="menu_product_11">
+            <a href="javascript:void(0);"  onclick="loadContent('Milkshake')">
+            <p>Strawberyy Milkshake</p>
+            <p>Milk and ice blended with our natural strawberry base. Creamy and delicious.</p>
+            <p><i class="fa-solid">more info</i></p>
+          </a>
+        </div>
+        <div class="menu_product_12">
+          <a href="javascript:void(0);"  onclick="loadContent('Chocolate Milkshake')">
+            <p>Chocolate Milkshake</p>
+            <p>Our chocolate mix blended with milk and ice.</p>
+            <p><i class="fa-solid">more info</i></p>
+          </a>
+        </div>
+        <div class="menu_product_13">
+          <a href="javascript:void(0);"  onclick="loadContent('Vanilla Milkshake')">
+            <p>Vanilla Milkshake </p>
+            <p>A creamy milkshake blended with milk, vanilla syrup and ice.</p>
+            <p><i class="fa-solid">more info</i></p>
+          </a>
+        </div>
+       
+        </section>
+        <section class="nutritionAlergen">
+          <h5>Guide</h5>
+          <a href="images/food%20allergy.pdf" target="_blank">nutrition & allergen guide</a>
+          <a href="images/food%20allergy.pdf" target="_blank">nutrition & allergen guide (northern ireland)</a>
+        </section>
+      </section>
+</div>
+    </main>
+    <!--footer for coffee page-->
+    <footer class="top-footer-element">
+      <ul>
+        <li><a href="index.html">cafe</a></li>
+        <li><a href="index.html">frankie</a></li>
+      </ul>
+       <ul>
+         <li>about</li>
+         <li>press releases</li>
+         <li>story</li>
+         <li>ethics</li>
+       </ul>
+       <ul>
+         <li>information</li>
+         <li>gender pay report</li>
+         <li>terms & conditions</li>
+         <li>privacy</li>
+         <li>tax policy</li>
+       </ul>
+       <ul>
+        <li>help</li>
+        <li>FAQ</li>
+        <li><a href="contactus.html">contact us</a></li>
+        <li>gift cards</li>
+        <li><a href="clickapp.html">the app</a></li>
+       </ul>
+   
+    </footer>
+      <script src="menu.js" defer></script>
+      <script src="header.js" defer></script>
+      <script src="preloader.js" defer></script>
+      <script src="shopdropBtn.js"></script>
+</body>
+</html>

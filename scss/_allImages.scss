@@ -1,0 +1,6 @@
+//mobile phone potraits images
+@mixin images-shared{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;    
+}

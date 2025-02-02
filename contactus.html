@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="frankie cafe, drinks, food and coffee products items">
+    <title>Frankie | Contact</title>
+    <link rel="icon" type="image/x-icon" href="images/frankie_logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5d07f027c2.js" crossorigin="anonymous"></script> 
+    <style>
+      #map {
+          height: 500px;
+          width: 100%;
+      }
+      .headContact{
+        font-size: 25px;
+        font-weight: 600;
+        text-transform: uppercase;
+        align-self: center;
+        text-align: center;
+        line-height: 1.4;
+        color: #002517;
+      }
+      .map-text{
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 50px;
+       padding: 20px;
+       justify-items: center;
+       margin: 50px 0px;
+      }
+      .map-loading-text{
+        width: 100%;
+      }
+      .headAddress{
+        align-content: center;
+        text-align: center;
+      }
+      address{
+        font-family: "Open Sans", sans-serif;
+        line-height: 2;
+        font-size: 15px;
+        margin-top: 30px;
+        color: #002517;
+      }
+    
+      #map{
+        border: 2px solid rgb(154, 152, 152);
+      }
+      #loading{
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        padding: 15px 0px;
+        color: #002517;
+      }
+      .fa-house{
+    font-size: 15px;
+    cursor: pointer;
+    color: #002517;
+
+  }
+  span{
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+      @media (max-width: 700px){
+        .map-text{
+       display: block;
+       padding: 40px;
+       justify-items: center;
+      }
+      .headContact{
+        font-family: "Open Sans", sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+        text-transform: uppercase;
+        align-self: center;
+        text-align: center;
+        line-height: 1.5;
+        padding-bottom: 30px;
+      }
+      address{
+        font-family: "Open Sans", sans-serif;
+        padding-bottom: 70px;
+        line-height: 2;
+        font-size: 15px;
+        justify-items: center;
+      }
+    
+      #map{
+        border: 2px solid rgb(154, 152, 152);
+      }
+      #loading{
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      }
+  </style>
+  <script>
+    let map;
+    let service;
+
+    function initMap() {
+      const loadingMessage = document.getElementById('loading');
+      loadingMessage.style.display = 'block'; // Show loading message
+        // Check if geolocation is supported
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                const location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: location,
+                    zoom: 15 // Zoom level for the user's location
+                });
+
+                // Optionally, you can use PlacesService to find nearby places
+                service = new google.maps.places.PlacesService(map);
+                const request = {
+                    location: location,
+                    radius: '500', // Search radius in meters
+                    type: ['restaurant'] // Type of places to search
+                };
+
+                service.nearbySearch(request, (results, status) => {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        for (let i = 0; i < results.length; i++) {
+                            const place = results[i];
+                            console.log(place); // Process results
+                        }
+                    }
+                    loadingMessage.style.display = 'none'; // Hide loading message
+            });
+
+            // Add a marker for the user's location
+            new google.maps.Marker({
+                position: location,
+                map: map,
+                title: 'You are here!'
+            });
+        }, () => {
+            handleLocationError(true);
+            loadingMessage.style.display = 'none'; // Hide loading message
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false);
+        loadingMessage.style.display = 'none'; // Hide loading message
+    }
+}
+    function handleLocationError(browserHasGeolocation) {
+        const errorMessage = browserHasGeolocation
+            ? 'Error: The Geolocation service failed.'
+            : 'Error: Your browser doesn\'t support geolocation.';
+        alert(errorMessage);
+    }
+
+    // Initialize map after the window has fully loaded
+    window.onload = initMap;
+  </script>
+  
+  </head>
+
+  <body >
+    
+    <header class="fixed-header">
+      <nav>
+    
+        <div class="mobile_toggle">
+           <div class="desktop_logo">
+              <a href="index.html">c-fkie</a>
+           </div>
+           <div>
+              <a class="click_Icon" aria-label="Toggle navigation">&#9776;</a>
+           </div>
+        </div>
+        <div>
+        <ul class="nav-list">
+          <li>
+             <a href="index.html" class="mobile_logo">c-fkie</a>
+          </li>
+          <li class="right_Btn">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">menu</a>
+                <div class="dropdown-content">
+                    <a href="coffee.html">coffee</a>
+                    <a href="food.html">food</a>
+                    <a href="drinks.html">drinks</a>
+                </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">about</a>
+              <div class="dropdown-content">
+                  <a href="ourcoffee.html">our coffee</a>
+                  <a href="ourstories.html">our stories</a>
+              </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">shop</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" id="capsules-link">capsules</a>
+                <a href="javascript:void(0);" id="beans-link">beans & ground</a>
+                <a href="javascript:void(0);" id="gift-cards-link">gift cards & cups</a>
+                <a href="javascript:void(0);" id="gift-ideas-link">gift ideas</a>
+                <a href="javascript:void(0);" id="clearance-link">clearance</a>
+            </div>
+         </li>
+         <li><a href="contactus.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+   </header>
+  <!-- Preloader -->
+  <div class="full-page-loader" id="preloader">
+    <div class="spinner"></div>
+  </div>
+  
+   <div class="wrapper-container">
+    <main class= "gaps-home-page">
+    <section >
+      <h2 class="h1__heading">contact us</h2>
+      <div class="map-text">
+      <div class="headAddress">
+        <h2 class="headContact">Find Your Current Location and Nearby Shops</h2>
+        <address>
+          <span>Address:</span>
+          Frankie Holdings Limited
+          9-15 Neal Street
+          Covent Garden
+          Leeds
+          LS12 2AX
+        </address>
+        <p>Tel: <a href="tel:+1133378901">01133378901</a></p>
+      </div>
+      <div class="map-loading-text">
+          <p id="loading" style="display: none;">Loading...</p>
+          <div id="map"></div>
+      </div>
+      </div>
+    </section>
+    </main>
+</div> 
+ <footer class="top-footer-element">
+  <ul >
+   <li><a href="index.html">cafe</a></li>
+   <li><a href="index.html">frankie</a></li>
+  </ul>
+   <ul>
+     <li>about</li>
+     <li>press releases</li>
+     <li>story</li>
+     <li>ethics</li>
+   </ul>
+   <ul>
+     <li>information</li>
+     <li>gender pay report</li>
+     <li>terms & conditions</li>
+     <li>privacy</li>
+     <li>tax policy</li>
+   </ul>
+   <ul>
+     <li>help</li>
+     <li>FAQ</li>
+     <li><a href="contactus.html">contact us</a></li>
+     <li>gift cards</li>
+     <li><a href="clickapp.html">the app</a></li>
+   </ul>
+
+ </footer>
+  <script src="header.js" defer></script>
+  <script src="preloader.js" defer></script>
+  <script src="shopdropBtn.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZkdbG_jbeaL2WWOYAWgzhgckRDgctS0U&libraries=places" async defer></script>
+  </body>
+</html>

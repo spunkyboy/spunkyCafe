@@ -1,0 +1,28 @@
+@use"_allColors";
+//header text for home page
+@mixin header-shared{
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.6rem;
+    padding: 1rem 1rem;
+    line-height: 1.7;
+}
+//paragraph text for home page
+
+//font text 
+@mixin headFont{
+ font-family:"Outfit", sans-serif;
+ font-weight: 300;
+}
+// sub-heading font home page
+@mixin subHeader-shared{
+text-align: left;
+font-size: 1.3rem;
+padding-left: 1rem;
+font-weight: 600;
+color: allColors.$font-color;
+margin-top: 3rem;
+}
+
+

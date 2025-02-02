@@ -1,0 +1,132 @@
+
+//tablets, desktop and large screen
+
+.image-text-addButton{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 1.2rem;
+
+  .product-info-head{
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    font-weight: 500;
+    color: #315131;
+    border: 0.09rem solid #315131;;
+  }
+  .text-addButton-align{
+    align-content: center;
+    margin-left: 1rem;
+    padding: 1rem 0rem;
+  }
+  .product-info{
+    margin: 0rem 1rem;
+
+    h2{
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    p{
+    font-family: "Open Sans", sans-serif;
+     margin: 1rem 0rem;
+    }
+  }
+
+}
+
+.image-add-basket{
+
+  img{
+    height: 100%;
+  }
+}
+//preloader for product information
+.preloader_3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 7rem;
+  background-color: rgb(222, 222, 222); /* Semi-transparent background */
+  z-index: 999; /* Ensure it's above the image */
+  opacity: 1;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  font-size: 1.4rem;
+
+  display: flex; /* Flexbox to center all content */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center text within elements */
+}
+
+
+.modal_2 {
+  display: none; 
+  position: fixed;
+  z-index: 8888;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height:100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: rgba(255, 255, 255, 0.894);  
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+}
+
+/* Modal content */
+.modal-content_2 {
+  max-width: 1200px;
+  margin-inline: auto;
+  background-color: #fff;
+  padding: 1.25rem;
+  border: 0.083rem solid #315131;
+  width: 95%; /* Can adjust width */
+  position: relative; /* To position close button */
+  overflow: hidden; /* Prevent content overflow */
+  margin: 10% auto;
+ 
+}
+
+/* Close button (x) */
+.close_2 {
+  color: #aaa;
+  font-size: 1.75rem;
+  font-weight: bold;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.close_2:hover,
+.close_2:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 600px){
+
+.image-add-basket{
+
+  img{
+    max-height: 100%;
+  }
+}
+
+.image-text-addButton{
+  display: block;
+  gap: 2rem;
+  padding-bottom: 5rem;
+
+  }
+
+}
