@@ -6,8 +6,8 @@
 @use "_remarkable";
 @use "_menu";
 @use"_shop";
-@import "./allFontText";
-@import "./allImages";
+@use "./allFontText";
+@use "./allImages";
 
 
 html {
@@ -75,9 +75,9 @@ html {
   left: 0;
   width: 100%;
   background-color: #333333;
-  color: white;
+  color: #ffff;
   padding: 10px 0;
-  z-index: 8888; 
+  z-index: 800; 
 }
 
 .gaps-home-page{
@@ -158,11 +158,8 @@ nav {
   color: #c5eff7;
   background: none;
   cursor: pointer;
- 
- 
+
 }
-
-
 
 @media screen and (max-width: 768px) {
  .mobile_toggle{
@@ -183,7 +180,8 @@ nav {
   text-transform: uppercase;
   a{
     color:#c5eff7;
-  
+    font-weight: bold;
+    font-size: 1.2rem;
   }
 }
 
@@ -192,6 +190,7 @@ nav {
       color:#c5eff7;
       margin-bottom: 0.5rem;
       align-items: center;
+      font-size: 3rem;
 
   }
 
@@ -266,14 +265,15 @@ nav {
    h2{
     text-transform: uppercase;
     font-family: "Open Sans", sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
+    font-weight: bold;
+    font-size: 1.3rem;
     margin-bottom: 1.2rem;
     color: #002517;
    }
    h3{
     text-align: center;
-    font-size: 1.2rem;
+    font-weight: bold;
+    font-size: 1rem;
     font-family: "Open Sans", sans-serif;
     color: #002517;
    }
@@ -304,14 +304,14 @@ nav {
 
 .three-cup-image{
   img{
-    @include images-shared;
+    @include allImages.images-shared;
     object-position: 12% 35%;
     height: 30rem;
   }
 }
 .menu-treat-text{
     p:nth-last-child(2){
-    @include header-shared;
+    @include allFontText.header-shared;
   }
   p:nth-last-child(1){
    color: allColors.$paragraph-text-color;
@@ -465,7 +465,7 @@ a:hover{
   gap:0rem;
   margin-bottom: 3rem;
   img{
-    @include images-shared;
+    @include allImages.images-shared;
     height: 15.625rem;;
     margin: -1.2px 0px;
   }
@@ -594,7 +594,7 @@ a:hover{
 
   .three-cup-image{
     img{
-      @include images-shared;
+      @include allImages.images-shared;
       height: 40rem;
     }
   }
@@ -604,7 +604,7 @@ a:hover{
     grid-template-rows: 1fr 1fr ;
     gap:0rem;
     img{
-      @include images-shared;
+      @include allImages.images-shared;
       height: 300px;
       margin: -1.2px 0px;
     }

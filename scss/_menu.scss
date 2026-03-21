@@ -1,6 +1,6 @@
 @use "_allColors";
-@import "./allFontText";
-@import "./allImages";
+@use "./allFontText";
+@use "./allImages";
 
 
 html {
@@ -245,68 +245,64 @@ a:hover{
 }
 
 //modal style code 
-  .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 9999; 
-    top:0px;
-    bottom:0px;
-    left:0px;
-    right:0px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    /* Enable scroll if needed */
-    background-color: allColors.$modalTransparent;
-   
-  }
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;   /* Scroll if content is taller than viewport */
+  overflow-x: hidden;
+  background-color: rgba(0,0,0,0.5); 
+  display: flex;          /* Flex container for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  padding: 1rem;           /* Avoid touching screen edges on mobile */
+  box-sizing: border-box;
+  z-index: 9999;
+}
 
-  .modal-content {
-        position: absolute;
-         max-width: 1200px;
-         margin-inline: auto;
-         width: 100%;
-         height: 100%;
-         margin:0 auto;
-         display:grid;
-         left: 0;
-         right:0;
-         top: 50%; 
-         -webkit-transform:translateY(-50%);
-         -moz-transform:translateY(-50%);
-         -ms-transform:translateY(-50%);
-         -o-transform:translateY(-50%);
-         transform: translateY(-50%);
+.modal-content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1200px;
+  width: 90%;             
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid #315131;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: grid;           
+  justify-items: center;   
+  align-items: center;  
+}
 
-  }
-  
-  .close {
-    display: flex;
-    justify-content: center;  /* Centers horizontally */
-    align-items: center;
-    position: absolute;
-    position: absolute;
-    margin: 7rem;
-    right: 35px;
-    top: 15px;
-    font-size: 1.9rem;
-    color: rgb(234, 230, 230);
-    width: 2rem;
-    background-color: rgb(7, 6, 6);
-    z-index: 99;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: rgb(171, 170, 170);
-    font-size: 1.7rem;
-    cursor: pointer;
-  }
-  
-  .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-size: 1.9rem;
+  color: #eae6e6;
+  background-color: #070606;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;       /* nice circular close button */
+  cursor: pointer;
+  // z-index: 1;           /* higher than modal-content */
+}
+
+.close:hover,
+.close:focus {
+  color: #abaaaa;
+  font-size: 1.7rem;
+}
   //        /* Preloader Styles */
 .preloader2 {
   position: absolute;
@@ -391,7 +387,7 @@ article .article_1 {
         font-family: "Open Sans", sans-serif;
     }
     img{
-     @include images-shared;
+     @include allImages.images-shared;
      height: 32.5rem;
     }
     table {
@@ -698,7 +694,10 @@ article .article_1 {
   .modal_article_31{
    
     display: block;
-    margin:0rem;
+    margin: 1rem 0rem;
+    max-height: 95vh;       /* Limit modal height to viewport */
+    overflow-y: auto;       /* Allow vertical scroll inside modal */
+    -webkit-overflow-scrolling: touch; /* Smooth scroll for iOS */
    
     .table_info{
       background-color:allColors.$modalBackgroundColor;
@@ -718,13 +717,14 @@ article .article_1 {
   height: 20rem;
   }
 }
+
 .close {
   display: flex;
   justify-content: center;  /* Centers horizontally */
   align-items: center;
   position: absolute;
   margin: 2rem;
-  left: 0.9375rem;
+  right: 0.9375rem;
   top: 0.625rem;
   font-size: 1.9rem;
   color: allColors.$modalBackgroundColor;

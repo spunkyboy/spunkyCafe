@@ -1,13 +1,13 @@
 
 @use "_slideOne";
-@use "_allColors";
-@import "./allImages";
-@import "./allFontText";
+// @use "_allColors";
+@use "./allImages";
+@use "./allFontText";
 
 .cups-image{
  margin: 0 auto;
   img{
-    @include images-shared;
+    @include allImages.images-shared;
     object-position: 12% 35%;
     height: 80vh;
    

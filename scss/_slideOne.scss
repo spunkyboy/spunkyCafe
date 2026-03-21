@@ -1,5 +1,5 @@
 @use"_allColors";
-@import "./allImages";
+@use "./allImages";
 
 body{
 p{
@@ -91,7 +91,7 @@ p{
           opacity: 0.3;
         }
         img{
-          @include images-shared;
+          @include allImages.images-shared;
           height: 385px;
         }
         p{
@@ -137,7 +137,7 @@ p{
           opacity: 0.3;
         }
         img{
-          @include images-shared;
+          @include allImages.images-shared;
           height: 15.625rem;
         }
         p{

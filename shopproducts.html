@@ -17,50 +17,67 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
     <style>
-         .fa-house{
-    font-size: 15px;
-    cursor: pointer;
-    color:#404040;
-  }
-  span{
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 10px;
-  }
-  .hidden{
-    display: none;
-  }
-    .visible {
-      display: block; /* Only show the section with this class */
-    }
-
-   
+              .fa-house{
+          font-size: 15px;
+          cursor: pointer;
+          color:#404040;
+        }
+        span{
+          cursor: pointer;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 10px;
+        }
+        .hidden{
+          display: none;
+        }
+          .visible {
+            display: block; /* Only show the section with this class */
+          }
+          #fixedScroll{
+            display: none;
+          }
     </style>
 
-     <script>
-      function showSection(sectionId) {
-      // First, hide all sections
-      const allSections = document.querySelectorAll('.hidden');
-      allSections.forEach(section => {
-        section.style.display = 'none';
-      });
+   <script>
 
-      // Now, display the selected section
-      const selectedSection = document.getElementById(sectionId);
-      if (selectedSection) {
-        selectedSection.style.display = 'block';
-      }
-    }
-
-      document.addEventListener("DOMContentLoaded", function() {
-    // When the page loads, if there's a hash in the URL, show the section
-    const sectionId = window.location.hash.substring(1); // Get the part after #
-    if (sectionId) {
-      showSection(sectionId); 
-    }
+function showSection(sectionId) {
+  // First, hide all sections
+  const allSections = document.querySelectorAll('.hidden');
+    allSections.forEach(section => {
+      section.style.display = 'none';
   });
-     </script>
+
+// Now, display the selected section
+const selectedSection = document.getElementById(sectionId);
+if (selectedSection) {
+selectedSection.style.display = 'block';
+
+// Scroll the selected section into view
+selectedSection.scrollIntoView({ behavior: 'smooth' });
+}
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+// When the page loads, if there's a hash in the URL, show the section
+const sectionId = window.location.hash.substring(1); // Get the part after #
+if (sectionId) {
+showSection(sectionId); 
+}
+});
+
+document.querySelectorAll('a[href^="javascript:void(0);"]').forEach(anchor => {
+anchor.addEventListener("click", function (e) {
+e.preventDefault();
+const sectionId = this.getAttribute('href').substring(1);
+    showSection(sectionId);
+// Optionally, update the URL hash to reflect the section
+window.history.pushState(null, null, `#${sectionId}`);
+});
+});
+
+
+   </script>
 </head>
 <body>
     
@@ -69,7 +86,7 @@
         <nav>
           <div class="mobile_toggle  shopproduct_toggle">
               <div class="desktop_logo">
-                  <a href="index.html">c-fkie</a>
+                  <a href="index.html">_frankie_</a>
               </div>
                <div class="toggle-basket">
                   <div>
@@ -78,7 +95,7 @@
                       </a>
                   </div>
                   <div class="frankie_cart_basket">
-                    <button id="cart-button" onclick="openCartModal()">
+                    <button id="cart-button">
                       <i class="fa-solid fa-basket-shopping">
                         <span id="item-count">0</span>
                       </i>
@@ -89,11 +106,11 @@
            <div>
           <ul class="nav-list">
             <li>
-               <a href="index.html" class="mobile_logo">c-fkie</a>
+               <a href="index.html" class="mobile_logo">_frankie_</a>
             </li>
             <li class="right_Btn">
               <li class="dropdown">
-                  <a href="#" class="dropbtn">menu</a>
+                  <a href="javascript:void(0);" class="dropbtn">menu</a>
                   <div class="dropdown-content">
                       <a href="coffee.html">coffee</a>
                       <a href="food.html">food</a>
@@ -101,36 +118,27 @@
                   </div>
               </li>
               <li class="dropdown">
-                <a href="#" class="dropbtn">about</a>
+                <a href="javascript:void(0);" class="dropbtn">about</a>
                 <div class="dropdown-content">
                     <a href="ourcoffee.html">our coffee</a>
                     <a href="ourstories.html">our stories</a>
                 </div>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropbtn">shop</a>
-              <div class="dropdown-content">
-                  <a href="javascript:void(0);" id="capsules-link">capsules</a>
-                  <a href="javascript:void(0);" id="beans-link">beans & ground</a>
-                  <a href="javascript:void(0);" id="gift-cards-link">gift cards & cups</a>
-                  <a href="javascript:void(0);" id="gift-ideas-link">gift ideas</a>
-                  <a href="javascript:void(0);" id="clearance-link">clearance</a>
-              </div>
-           </li>
-              <li><a href="contactus.html">Contact</a></li>
+              <a href="shop.html" class="dropbtn">shop</a>
+            </li>
+              <li><a href="contact-us.html">Contact</a></li>
 
           </ul>
         
         </div>
        
-      </nav>
-    
+        </nav>
       </header>
     
-     
        <div class="coffee_home_grid">
            <!-- Modal structure loader productsinfo.html for product information and preview-->
-          <div id="myModal_2" class="modal_2">
+          <div id="myModal_2" class="modal_2" style="display: none;">
             <div class="modal-content_2">
                 <span class="close_2">&times;</span>
                   <div id="modal-content_2_b"> 
@@ -145,7 +153,7 @@
             <!--  modal open for cart basket shop page-->
             <div id="cart-modal" class="modal_3">
               <div class="modal-content-product">
-                  <span class="close_2" onclick="closeCartModal()">&times;</span>
+                  <span class="close_2" id="close-button">&times;</span>
                     <h2>Your Cart</h2>
                     <div id="cart-items">
                       <p>Your cart is empty.</p>
@@ -199,9 +207,9 @@
                 <img src="images/frankie_capsule.jpg" alt="coffee beans">
             </figure>
             <h2>capsules</h2>
-            <div class="products_stage_Btn">
-              <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
-              <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
+            <div class="products_stage_Btn" id="fixedScroll1">
+              <a href="javascript:void(0);" class="button_visited" onclick="showSection('box1')" >capsules</a>
+              <a href="javascript:void(0);" class="button" onclick="showSection('box2')" >beans & ground</a>
               <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
               <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
               <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
@@ -231,13 +239,13 @@
                           <button 
                               onclick="addToCart(1, 'Product 1', '<img src=\'images/frankie_capsule.jpg\'>', 4.25)">
                               Add to Cart
-                        </button>           
+                          </button>           
                       </div>
                       </div>
                   </div>
                 </div>
         
-<!--products 2-->
+               <!--products 2-->
             <div class="products_stage">
              <!--onclick to load product items from productsinfo.html information-->
               <a href="javascript:void(0);" onclick="pricesLoader('single origin £4.05')">
@@ -262,7 +270,7 @@
                   </div>
               </div>
             </div>
-<!--products 3-->
+            <!--products 3-->
             <div class="products_stage">
               <a href="javascript:void(0);" onclick="pricesLoader('winter blend - coffee')">
                 <figure>
@@ -309,7 +317,7 @@
               </div>
             </div>
 
-          <!--products 5-->
+            <!--products 5-->
             <div class="products_stage">
               <a href="javascript:void(0);" onclick="pricesLoader('capsules - virtuoso')">
                 <figure>
@@ -380,11 +388,11 @@
                 </div>
                 </div>
             </div>
-         </div>
-          </div>
+            </div>
+              </div>
          
-        </section>
-   <!--section for all Beans products-->
+            </section>
+          <!--section for all Beans products-->
         <section class="top_one_1 hidden" id="box2" >
             <!-- Preloader (hidden by default) -->
         <div class="preloaderShop" style="display: flex;">
@@ -395,9 +403,9 @@
               <img src="images/frankie_beans.jpg" alt="coffee capsules">
             </figure>
             <h2>beans & ground</h2>
-            <div class="products_stage_Btn">
+            <div class="products_stage_Btn" id="fixedScroll2">
               <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
-              <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
+              <a href="javascript:void(0);" class="button_visited" onclick="showSection('box2')">beans & ground</a>
               <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
               <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
               <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
@@ -514,10 +522,10 @@
               <img src="images/frankie_gift_cups.jpg" alt="coffee gift">
             </figure>
             <h3>gift cards and cups</h3>
-            <div class="products_stage_Btn">
-               <a href="javascript:void(0);" class="button_1" onclick="showSection('box1')">capsules</a>
+            <div class="products_stage_Btn" id="fixedScroll3">
+               <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
                <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
-               <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
+               <a href="javascript:void(0);" class="button_visited" onclick="showSection('box3')">gift cards and cups</a>
                <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
                <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
            </div>
@@ -645,11 +653,11 @@
               <img src="images/frankie_gifts_ideas.jpg" alt="gift ideas">
             </figure>
             <h3> gift ideas</h3>
-            <div class="products_stage_Btn">
+            <div class="products_stage_Btn" id="fixedScroll4">
                 <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
                 <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
                 <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
-                <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
+                <a href="javascript:void(0);" class="button_visited" onclick="showSection('box4')">gift ideas</a>
                 <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
             </div>
             </div>
@@ -800,12 +808,12 @@
                 <img src="images/frankie_clearance.jpg" alt="clearance items of products">
               </figure>
             <h3> clearance</h3>
-            <div class="products_stage_Btn">
+            <div class="products_stage_Btn" id="fixedScroll5">
                 <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
                 <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
                 <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
                 <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
-                <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
+                <a href="javascript:void(0);" class="button_visited" onclick="showSection('box5')">clearance</a>
               </div>
             </div>    
             <div class="grid-for-all-products">
@@ -903,7 +911,7 @@
            
         </section>
 
-      </div>
+       </div>
         <footer class="top-footer-element">
             <ul>
              <li><a href="index.html">cafe</a></li>
@@ -925,20 +933,20 @@
              <ul>
                <li>help</li>
                <li>FAQ</li>
-               <li><a href="contactus.html">contact us</a></li>
+               <li><a href="contact-us.html">contact us</a></li>
                <li>gift cards</li>
-               <li><a href="clickapp.html">the app</a></li>
+               <li><a href="click-app.html">the app</a></li>
              </ul>
          
-         </footer>
-        
-        
+        </footer>
+           
     </main>
-    <script src="header.js" defer></script>
-    <script src="productsinfoloader.js" defer></script>
-    <script src="shopproducts.js" defer></script>
-    <script src="additems.js" defer></script>
-    <script src="shopdropsamepage.js"></script>
-   
+    <script src="./javascripts/showSection.js"defer ></script>
+    <script src="./javascripts/header.js" async></script>
+    <script src="./javascripts/productsinfoloader.js" defer></script>
+    <script src="./javascripts/shopproducts.js" async></script>
+    <script src="./javascripts/add-items.js" ></script>
+    <script src="./javascripts/scrollMenuOthers.js" async></script>
+  
 </body>
 </html>

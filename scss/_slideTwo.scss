@@ -1,7 +1,7 @@
 @use "_slideOne";
 @use "_allColors";
-@import "./allImages";
-@import "./allFontText";
+@use "./allFontText";
+
 
 html {
   font-size: 16px;
@@ -51,14 +51,14 @@ body{
     align-self: center;
     line-height: 2;
     padding-left: 1rem;
-    font-weight: 300;
-    color:  #002517;
+    color:#002517;
+    h2{
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      }
   }
-  h2{
-  font-size: 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  }
+ 
   a{
     margin-left: 1rem;
    }
@@ -114,7 +114,8 @@ a:hover{
   h2{
     font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
   }
   p{
     font-family: "Open Sans", sans-serif;
