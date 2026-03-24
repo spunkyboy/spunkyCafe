@@ -26,7 +26,7 @@ async function pricesLoader(section) {
 
     // Show preloader immediately
     preloader_3.style.display = "flex";
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // await new Promise(resolve => setTimeout(resolve, 2000));
     try {
         const response = await fetch('productsinfo.html');
         if (!response.ok) throw new Error(`Network error: ${response.status}`);

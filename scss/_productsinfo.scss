@@ -65,42 +65,59 @@
     text-align: center;
   }
 
-  .modal_2 {
-    display: none; 
-    position: fixed; 
-    z-index: 9999; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;   /* Scroll if content is taller than viewport */
-    overflow-x: hidden;
-    background-color: rgba(0,0,0,0.5); /* semi-transparent overlay */
-    display: flex;          /* Flex container for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    padding: 1rem;           /* Avoid touching screen edges on mobile */
-    box-sizing: border-box;       /* allow scrolling if modal taller than viewport */
+
+.modal_2 {
+  display: none; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;   /* Scroll if content is taller than viewport */
+  overflow-x: hidden;
+  background-color: rgba(0,0,0,0.5); 
+ 
+
+  display: flex;         
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  padding: 1rem;           /* Avoid touching screen edges on mobile */
+  box-sizing: border-box;
+  z-index: 997;
 }
 
-/* Modal content */
 .modal-content_2 {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative; /* keep relative for close button positioning */
+  /* REMOVE THESE: */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+
   max-width: 1200px;
-  width: 95%;             
+  width: 90%;
   background-color: #fff;
-  padding: 1.5rem;
+  padding: 1rem;
   border: 1px solid #315131;
   border-radius: 8px;
   box-sizing: border-box;
-  display: grid;           
-  justify-items: center;   
-  align-items: center;    
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  max-height: 90vh;   /* important for scroll */
+  overflow-y: auto;
+  margin: auto; 
 }
 
+.modal-content-wrapper_2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center for small content */
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
 /* Close button (x) */
 .close_2 {
     color: #aaa;
@@ -110,7 +127,7 @@
     top: 1rem;
     right: 1rem;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 998;
 }
 
 .close_2:hover,
@@ -126,10 +143,9 @@
 /* Modal content */
 .modal-content_2 {
   width: 95%;            
-  max-height: 95%;  
+  max-height: 90vh;  
   
   overflow: auto;
-  // margin-top: 3vh;
 }
 
 .image-add-basket{

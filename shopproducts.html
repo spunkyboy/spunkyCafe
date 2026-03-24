@@ -138,16 +138,17 @@ window.history.pushState(null, null, `#${sectionId}`);
     
        <div class="coffee_home_grid">
            <!-- Modal structure loader productsinfo.html for product information and preview-->
-          <div id="myModal_2" class="modal_2" style="display: none;">
-            <div class="modal-content_2">
+           <div id="myModal_2" class="modal_2" style="display: none;">
+            <div class="modal-content-wrapper_2">
+              <div class="modal-content_2">
                 <span class="close_2">&times;</span>
-                  <div id="modal-content_2_b"> 
-                    <div id="preloader_3" class="preloader_3">
-                      Loading, please wait...
-                    </div>
-                    <div id="contentChange">
-                    </div>
+                <div id="modal-content_2_b"> 
+                  <div id="preloader_3" class="preloader_3">
+                    Loading, please wait...
                   </div>
+                  <div id="contentChange"></div>
+                </div>
+              </div>
             </div>
           </div>
             <!--  modal open for cart basket shop page-->
@@ -941,7 +942,7 @@ window.history.pushState(null, null, `#${sectionId}`);
         </footer>
            
     </main>
-    <script src="./javascripts/showSection.js"defer ></script>
+    <!-- <script src="./javascripts/showSection.js"defer ></script> -->
     <script src="./javascripts/header.js" async></script>
     <script src="./javascripts/productsinfoloader.js" defer></script>
     <script src="./javascripts/shopproducts.js" async></script>
