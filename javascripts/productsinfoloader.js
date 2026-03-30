@@ -1,15 +1,12 @@
 // Get modal elements for products information include spinner
 const modal = document.getElementById("myModal_2");
-// const modalContent = document.getElementById("modal-content_2");
 const closeModalButton = document.getElementsByClassName("close_2")[0];
 const preloader_3 = document.getElementById('preloader_3');
 
-// Close modal when clicking on <span> (x)
 closeModalButton.addEventListener("click", () => {
     modal.style.display = "none";
 });
 
-// Close modal when clicking outside the modal
 window.addEventListener("click", (event) => {
     if (event.target === modal) {
         modal.style.display = "none";
@@ -22,11 +19,9 @@ async function pricesLoader(section) {
     if (!preloader_3 || !modal || !contentContainer) return;
     
     modal.style.display = 'block';
-    modal.offsetHeight;
 
-    // Show preloader immediately
     preloader_3.style.display = "flex";
-    // await new Promise(resolve => setTimeout(resolve, 2000));
+
     try {
         const response = await fetch('productsinfo.html');
         if (!response.ok) throw new Error(`Network error: ${response.status}`);

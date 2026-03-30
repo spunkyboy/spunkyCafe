@@ -132,44 +132,53 @@ body{
         background-color: #141414;;
         color: rgb(255, 255, 255);
     }
-    .products_stage_Btn{
+
+.products_wrapper {
+    display: flex;
+    justify-content: center; 
+  }
+.products_stage_Btn {
+    display: flex; 
+    overflow-x: auto;
+    white-space: nowrap;
+    
+    justify-content: flex-start; // better for scroll
+    text-align: center;
+    justify-content: center;
+    padding: 1.3rem 0rem;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px 1px rgb(23, 22, 22);
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    // Hide scrollbar (optional)
+    &::-webkit-scrollbar {
         display: none;
-        justify-content: space-between;
-        text-align: center;
-        top: 0;
-        left: 0;
-        padding: 1.2rem 0rem;
-        box-sizing: border-box;
-        width: 100%;       
-        box-shadow: 1px 1px 5px 1px rgb(23, 22, 22);
-   
-        &:focus{
-           background-color: #141414;
-           color:#DBDBDB;
-           padding: 0.4rem;
-           outline: none;  
-       }
-       a{
-           cursor: pointer;
-           font-family: "Open Sans", sans-serif;
-           text-transform: uppercase;
-           color:#444343;
-           border: none;
-           border-radius: 0.2rem;
-           padding: 0.2rem 0.4rem;
-           margin: 0rem 0.6rem;
-           transition: background-color 0.3s, color 0.3s;  /* Smooth transition for hover/focus */
-           line-height: 1.6;
-           text-decoration: underline;
-            
-       }
-     
-       a:hover {
-           text-decoration: none;
-           padding: 0.4rem;  /* Keep padding consistent */
-         }
-   }
-  
+    }
+    scrollbar-width: none;
+
+    a {
+        // flex: 0 0 auto; 
+        white-space: nowrap;
+
+        cursor: pointer;
+        font-family: "Open Sans", sans-serif;
+        text-transform: uppercase;
+        color: #444343;
+        padding-left: 1rem;
+       
+        border: none;
+        border-radius: 0.2rem;
+        line-height: 1.6;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
 }
 
 

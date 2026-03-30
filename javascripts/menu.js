@@ -12,21 +12,21 @@ const contentContainer = document.getElementById("content");
 function loadContent(section) {
     if (!modal || !preloader || !contentContainer) return;
 
-    // Show modal and preloader immediately
-    modal.style.display = "block";
+   
     preloader.style.display = "flex";
     preloader.style.opacity = 1;
-    contentContainer.innerHTML = ""; 
+    contentContainer.innerHTML = "";
+    modal.style.display = "block";
+
 
     const xhr = new XMLHttpRequest();
     xhr.open('GET', 'modalpages.html', true);
 
-    xhr.onload = function () {
+    xhr.onload = async function () {
         if (this.status === 200) {
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = this.responseText;
 
-            // Find the matching section
             const sections = tempDiv.getElementsByTagName('article');
             let sectionContent = '';
             for (let s of sections) {
@@ -36,14 +36,14 @@ function loadContent(section) {
                 }
             }
 
-            // Insert content
             contentContainer.innerHTML = sectionContent || 'Content not found.';
-
         } else {
             contentContainer.innerText = 'Error loading content.';
         }
 
-        // Hide preloader once content is ready
+        // Artificial delay for testing (1 minute)
+        await new Promise(resolve => setTimeout(resolve, 400));
+
         preloader.style.display = "none";
         preloader.style.opacity = 0;
     };
