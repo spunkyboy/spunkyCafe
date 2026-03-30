@@ -144,9 +144,11 @@ body{
     
     justify-content: flex-start; // better for scroll
     text-align: center;
-    justify-content: center;
-    padding: 2rem;
+    justify-content: space-between;
+    padding: 2rem 1rem;
     width: 100%;
+    max-width: 75rem;
+
     box-sizing: border-box;
     box-shadow: 1px 1px 5px 1px rgb(23, 22, 22);
 
@@ -160,14 +162,15 @@ body{
     scrollbar-width: none;
 
     a {
-        flex: 0 0 auto; 
+        // flex: 0 0 auto; 
         white-space: nowrap;
 
         cursor: pointer;
         font-family: "Open Sans", sans-serif;
+        font-weight: 600;
         text-transform: uppercase;
         color: #444343;
-        
+        margin-left: 1.2rem;
 
         border: none;
         border-radius: 0.2rem;

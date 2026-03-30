@@ -122,6 +122,7 @@ nav {
   font-size: 1.2rem;
   padding: 1rem;
   color:#BBD4D4;
+  font-weight: 650;
   text-transform: uppercase;
   text-decoration: none;
   transition: background-color 0.3s ease;
@@ -145,6 +146,8 @@ nav {
 
 .dropdown-content a {
   padding: 0.7rem 1rem;
+  // font-size: 0.4rem;
+ 
 }
 
 .dropdown:hover .dropdown-content {
