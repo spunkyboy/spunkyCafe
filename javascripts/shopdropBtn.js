@@ -1,28 +1,27 @@
 
- document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("capsules-link").addEventListener("click", function(event) {
-    event.preventDefault();
-    window.location.href = "shopproducts.html#box1"; // Navigate to box1 in shopproducts.html
-  });
-  
-  document.getElementById("beans-link").addEventListener("click", function(event) {
-    event.preventDefault();
-    window.location.href = "shopproducts.html#box2"; // Navigate to box2 in shopproducts.html
-  });
+document.addEventListener("DOMContentLoaded", () => {
+    const linksProducts = {
+      "capsules-link": "box1",
+      "beans-link": "box2",
+      "gift-cards-link": "box3",
+      "gift-ideas-link": "box4",
+      "clearance-link": "box5"
+    };
 
-  document.getElementById("gift-cards-link").addEventListener("click", function(event) {
-    event.preventDefault();
-    window.location.href = "shopproducts.html#box3"; // Navigate to box3 in shopproducts.html
-  });
-  document.getElementById("gift-ideas-link").addEventListener("click", function(event) {
-    event.preventDefault();
-    window.location.href = "shopproducts.html#box4"; // Navigate to box3 in shopproducts.html
-  });
+  try {
 
-  document.getElementById("clearance-link").addEventListener("click", function(event) {
-    event.preventDefault();
-    window.location.href = "shopproducts.html#box5"; // Navigate to box4 in shopproducts.html
-  });
+    Object.entries(linksProducts).forEach(([id, box]) => {
+      const productsElement = document.getElementById(id);
+
+      if (!productsElement) return; // skip if element not found
+
+      productsElement.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = `shopproducts.html#${box}`;
+        
+      });
+    });
+  } catch (error) {
+    console.error("Something went wrong:", error);
+  }
 });
-
-

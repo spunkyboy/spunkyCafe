@@ -28,56 +28,15 @@
           text-transform: uppercase;
           font-size: 10px;
         }
-        .hidden{
-          display: none;
-        }
+       
           .visible {
-            display: block; /* Only show the section with this class */
+            display: block;
           }
           #fixedScroll{
             display: none;
           }
     </style>
 
-   <script>
-
-function showSection(sectionId) {
-  // First, hide all sections
-  const allSections = document.querySelectorAll('.hidden');
-    allSections.forEach(section => {
-      section.style.display = 'none';
-  });
-
-// Now, display the selected section
-const selectedSection = document.getElementById(sectionId);
-if (selectedSection) {
-selectedSection.style.display = 'block';
-
-// Scroll the selected section into view
-selectedSection.scrollIntoView({ behavior: 'smooth' });
-}
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-// When the page loads, if there's a hash in the URL, show the section
-const sectionId = window.location.hash.substring(1); // Get the part after #
-if (sectionId) {
-showSection(sectionId); 
-}
-});
-
-document.querySelectorAll('a[href^="javascript:void(0);"]').forEach(anchor => {
-anchor.addEventListener("click", function (e) {
-e.preventDefault();
-const sectionId = this.getAttribute('href').substring(1);
-    showSection(sectionId);
-// Optionally, update the URL hash to reflect the section
-window.history.pushState(null, null, `#${sectionId}`);
-});
-});
-
-
-   </script>
 </head>
 <body>
     
@@ -125,7 +84,7 @@ window.history.pushState(null, null, `#${sectionId}`);
                 </div>
             </li>
             <li class="dropdown">
-              <a href="shop.html" class="dropbtn">shop</a>
+              <a href="#" class="dropbtn">shop</a>
             </li>
               <li><a href="contact-us.html">Contact</a></li>
 
@@ -210,11 +169,11 @@ window.history.pushState(null, null, `#${sectionId}`);
             <h2>capsules</h2>
             <div class="products_wrapper">
             <div class="products_stage_Btn" id="fixedScroll1">
-              <a href="javascript:void(0);" class="button_visited" onclick="showSection('box1')" >capsules</a>
-              <a href="javascript:void(0);" class="button" onclick="showSection('box2')" >beans & ground</a>
-              <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
-              <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
-              <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
+              <a href="#box1" class="button_visited" data-section="box1">capsules</a>
+              <a href="#box2" class="button" data-section="box2">beans & ground</a>
+              <a href="#box3" class="button" data-section="box3">gift cards and cups</a>
+              <a href="#box4" class="button" data-section="box4">gift ideas</a>
+              <a href="#box5" class="button" data-section="box5">clearance</a>
             </div>
           </div>
          </div>
@@ -407,11 +366,11 @@ window.history.pushState(null, null, `#${sectionId}`);
             <h2>beans & ground</h2>
             <div class="products_wrapper">
             <div class="products_stage_Btn" id="fixedScroll2">
-              <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
-              <a href="javascript:void(0);" class="button_visited" onclick="showSection('box2')">beans & ground</a>
-              <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
-              <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
-              <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
+              <a href="#box1" class="button" data-section="box1">capsules</a>
+              <a href="#box2" class="button_visited" data-section="box2">beans & ground</a>
+              <a href="#box3" class="button" data-section="box3">gift cards and cups</a>
+              <a href="#box4" class="button" data-section="box4">gift ideas</a>
+              <a href="#box5" class="button" data-section="box5">clearance</a>
             </div>
           </div>
           </div>
@@ -528,11 +487,11 @@ window.history.pushState(null, null, `#${sectionId}`);
             <h3>gift cards and cups</h3>
             <div class="products_wrapper">
             <div class="products_stage_Btn" id="fixedScroll3">
-               <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
-               <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
-               <a href="javascript:void(0);" class="button_visited" onclick="showSection('box3')">gift cards and cups</a>
-               <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
-               <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
+               <a href="#box1" class="button" data-section="box1">capsules</a>
+               <a href="#box2" class="button" data-section="box2">beans & ground</a>
+               <a href="#box3" class="button_visited" data-section="box3">gift cards and cups</a>
+               <a href="#box4" class="button" data-section="box4">gift ideas</a>
+               <a href="#box5" class="button" data-section="box5">clearance</a>
            </div>
            </div>
            </div>
@@ -661,11 +620,11 @@ window.history.pushState(null, null, `#${sectionId}`);
             <h3> gift ideas</h3>
             <div class="products_wrapper">
             <div class="products_stage_Btn" id="fixedScroll4">
-                <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
-                <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
-                <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
-                <a href="javascript:void(0);" class="button_visited" onclick="showSection('box4')">gift ideas</a>
-                <a href="javascript:void(0);" class="button" onclick="showSection('box5')">clearance</a>
+              <a href="#box1" class="button" data-section="box1">capsules</a>
+              <a href="#box2" class="button" data-section="box2">beans & ground</a>
+              <a href="#box3" class="button" data-section="box3">gift cards and cups</a>
+              <a href="#box4" class="button_visited" data-section="box4">gift ideas</a>
+              <a href="#box5" class="button" data-section="box5">clearance</a>
             </div>
             </div>
             </div>
@@ -818,11 +777,11 @@ window.history.pushState(null, null, `#${sectionId}`);
             <h3> clearance</h3>
             <div class="products_wrapper">
             <div class="products_stage_Btn" id="fixedScroll5">
-                <a href="javascript:void(0);" class="button" onclick="showSection('box1')">capsules</a>
-                <a href="javascript:void(0);" class="button" onclick="showSection('box2')">beans & ground</a>
-                <a href="javascript:void(0);" class="button" onclick="showSection('box3')">gift cards and cups</a>
-                <a href="javascript:void(0);" class="button" onclick="showSection('box4')">gift ideas</a>
-                <a href="javascript:void(0);" class="button_visited" onclick="showSection('box5')">clearance</a>
+              <a href="#box1" class="button" data-section="box1">capsules</a>
+              <a href="#box2" class="button" data-section="box2">beans & ground</a>
+              <a href="#box3" class="button" data-section="box3">gift cards and cups</a>
+              <a href="#box4" class="button" data-section="box4">gift ideas</a>
+              <a href="#box5" class="button_visited" data-section="box5">clearance</a>
               </div>
             </div>  
             </div>  
@@ -954,7 +913,7 @@ window.history.pushState(null, null, `#${sectionId}`);
     <!-- <script src="./javascripts/showSection.js"defer ></script> -->
     <script src="./javascripts/header.js" async></script>
     <script src="./javascripts/productsinfoloader.js" defer></script>
-    <script src="./javascripts/shopproducts.js" async></script>
+    <script src="./javascripts/shopproducts.js" ></script>
     <script src="./javascripts/add-items.js" ></script>
     <script src="./javascripts/scrollMenuOthers.js" async></script>
   

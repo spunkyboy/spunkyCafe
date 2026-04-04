@@ -1,18 +1,21 @@
-
 const links = document.querySelectorAll('.show-box');
 
 links.forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();  // Prevent the default link behavior
+  link.addEventListener('click', function(event) {
+    try {
+      event.preventDefault();  // Prevent default link behavior
 
-        // Store the target box ID in localStorage
-        const targetId = link.getAttribute('data-target');
-        localStorage.setItem('targetBox', targetId);
+      const targetId = link.getAttribute('data-target');
 
-        window.location.href = 'shopproducts.html';
-       
-        });
-    });
+      if (!targetId) {
+        console.warn('No data-target found for this link');
+        return;
+      }
 
-  
+      window.location.href = `shopproducts.html#${targetId}`;
 
+    } catch (error) {
+      console.error('Error handling click event:', error);
+    }
+  });
+});
