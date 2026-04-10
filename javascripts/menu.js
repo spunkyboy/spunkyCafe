@@ -16,7 +16,7 @@ function loadContent(section) {
     preloader.style.display = "flex";
     preloader.style.opacity = 1;
     contentContainer.innerHTML = "";
-    modal.style.display = "block";
+    modal.style.display = "flex";
 
 
     const xhr = new XMLHttpRequest();

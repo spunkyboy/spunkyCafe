@@ -245,52 +245,50 @@ a:hover{
 }
 /* Fullscreen overlay using CSS Grid */
 .modal {
-  position: fixed;       /* Stay in place */
-  top: 50%;              /* Start at the middle */
+  display: none;
+  position: fixed;      
+  top: 50%;             
   left: 50%;
-  transform: translate(-50%, -50%);  /* Shift back by half width/height */
-  
-  /* Optional styling */
-  width: 90%;
-  max-width: 1200px;
+  transform: translate(-50%, -50%); 
 
-  background-color: white;
-  // padding: 20px;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2); 
+  backdrop-filter: blur(0.5rem);     
+  -webkit-backdrop-filter: blur(0.5rem);
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   z-index: 1000;
   overflow-y: auto;
   overflow-x: hidden;
+
+  justify-content: center;
+  align-items: center;
 }
 
 /* Modal content */
 .modal-content {
   position: relative;
- 
-  max-height: 90vh;             /* prevents modal from exceeding viewport */
-  overflow-y: auto;             /* scroll inside modal if tall */
+  max-width: 1200px;
+
+  overflow-y: auto;            
   background-color: #fff;
   border-radius: 8px;
-  // border: 1px solid #315131;
   padding: 1rem;
-  box-sizing: border-box;
-   margin: 1rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;      /* centers content if short */
-
+  margin: 1rem auto;
 }
 
 /* Close button */
 .close {
   position: absolute;
-  top: 15px;
-  right: 35px;
+  top: 1rem;
+  right: 1rem;
   font-size: 1.9rem;
   color: #eae6e6;
   background-color: #070606;
   width: 2rem;
   height: 2rem;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -690,7 +688,7 @@ article .article_1 {
     display: block;
     margin: 1rem 0rem;
     max-height: 95vh;       /* Limit modal height to viewport */
-    overflow-y: auto;       /* Allow vertical scroll inside modal */
+    overflow-y: auto;     
     -webkit-overflow-scrolling: touch; /* Smooth scroll for iOS */
    
     .table_info{
@@ -727,7 +725,6 @@ article .article_1 {
   z-index: 99;
 
 }
-
 
 
 }
