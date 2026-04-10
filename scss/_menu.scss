@@ -257,8 +257,8 @@ a:hover{
   background: rgba(0, 0, 0, 0.2); 
   backdrop-filter: blur(0.5rem);     
   -webkit-backdrop-filter: blur(0.5rem);
-  border-radius: 8px;
-  z-index: 1000;
+  border-radius: 0.5rem;
+  z-index: 899;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -273,9 +273,10 @@ a:hover{
 
   overflow-y: auto;            
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   padding: 1rem;
   margin: 1rem auto;
+  z-index: 9999;
 }
 
 /* Close button */
