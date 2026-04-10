@@ -258,7 +258,7 @@ a:hover{
   backdrop-filter: blur(0.5rem);     
   -webkit-backdrop-filter: blur(0.5rem);
   border-radius: 0.5rem;
-  z-index: 899;
+  z-index: 997;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -275,8 +275,8 @@ a:hover{
   background-color: #fff;
   border-radius: 0.5rem;
   padding: 1rem;
-  margin: 1rem auto;
-  z-index: 9999;
+  // margin: 1rem auto;
+ 
 }
 
 /* Close button */
@@ -290,6 +290,8 @@ a:hover{
   width: 2rem;
   height: 2rem;
   
+  z-index: 998;
+
   display: flex;
   justify-content: center;
   align-items: center;
