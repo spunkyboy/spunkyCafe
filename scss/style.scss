@@ -77,7 +77,8 @@ html {
   background-color: #333333;
   color: #ffff;
   padding: 10px 0;
-  z-index: 800; 
+  z-index: 800;
+
 }
 
 .gaps-home-page{
@@ -88,10 +89,6 @@ html {
 /* style.css */
 
 nav {
-  display: flex;
-  justify-content: space-between; // Space between logo and hamburger icon
-  align-content: center;
-  background-color: #333333;
   padding: 2rem;
   height: 7rem;
 }
@@ -99,17 +96,16 @@ nav {
 // Main nav list
 .nav-list {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   list-style: none;
-  margin: 0;
- 
+  width: 100%;
 }
+
 .desktop_logo{
   display: none;
 }
-.right_Btn{
-  display: flex;
- 
+.logo-left{
+  margin-right: auto;
 }
 
 // Nav items
@@ -117,6 +113,13 @@ nav {
   position: relative;
 }
 
+.fixed-header nav {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
 .nav-list a {
   display: block;
   font-size: 1.2rem;
@@ -126,6 +129,8 @@ nav {
   text-transform: uppercase;
   text-decoration: none;
   transition: background-color 0.3s ease;
+
+ 
 }
 
 .nav-list a:hover {
@@ -169,7 +174,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem;
+  width: 100%;
 
  }
  .dropdown-content a {
@@ -192,6 +197,7 @@ nav {
       display: flex;
       color:#c5eff7;
       margin-bottom: 0.5rem;
+      padding-bottom: 1rem;
       align-items: center;
       font-size: 3rem;
 

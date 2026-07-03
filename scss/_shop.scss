@@ -249,7 +249,6 @@ body{
 }
 
 .mobile_toggle{
-   
     .toggle-basket{
         cursor: pointer;
       .frankie_cart_basket{
@@ -527,20 +526,11 @@ body{
 @media screen and (max-width: 768px){
 
      .mobile_toggle{
-      
-        .toggle-basket{
-            display: flex;
-            align-items: center;
-            float: right;
-
-            .frankie_cart_basket{
-                margin-right: 0rem;
-                padding-left: 1rem;
-              }
-        }
-      
+       
        }
- 
+       .fa-basket-shopping {
+        padding: 1rem;
+    }
     }
     
 @media (max-width: 800px) {
