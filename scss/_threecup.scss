@@ -7,8 +7,8 @@
 .cups-image{
  margin: 0 auto;
   img{
-    @include allImages.images-shared;
-    object-position: 12% 35%;
+    width: 100%;
+    // object-position: 20% 5%;
     height: 80vh;
    
   }

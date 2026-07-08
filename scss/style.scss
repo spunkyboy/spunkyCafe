@@ -35,15 +35,13 @@ h1,h2,h3{
     font-family:"Playfair Display", serif;
 }
 }
+
 .wrapper-container{
   max-width: 1200px;
   margin-inline: auto;
   margin-top: 7rem;
 }
-main {
-  display: grid;
-  gap: 2rem;
-}
+
  /* Full-page container */
  .full-page-loader {
   position: fixed;
@@ -207,10 +205,10 @@ nav {
         );
     }
     p{
-        position:relative;
-        z-index:2;
+        position:absolute;
+        z-index:80;
         color:white;
-        font-size:5rem;
+        font-size: 2rem;
         font-weight:700;
         max-width:600px;
     }
